@@ -231,7 +231,10 @@ header .hero {
     .homeGallery .myOwnCarouselClass .carouselArrow2 {
       background-color: #FFE978;
       border-radius: 50%;
-      border: 7px #FFE978 solid; }
+      border: 7px #FFE978 solid;
+      position: absolute;
+      top: 50%;
+      margin-top: -15px; }
 
 .priceTable {
   background: transparent;
@@ -403,6 +406,9 @@ header .hero {
       font-size: 50px; }
     .homeGallery .myOwnCarouselClass {
       width: 100%; }
+      .homeGallery .myOwnCarouselClass .slideBox img {
+        height: 60vh;
+        object-fit: cover; }
   .priceTable {
     padding-top: 60px;
     padding-bottom: 90px; }
@@ -475,7 +481,12 @@ header .hero {
       font-size: 50px; }
     .homeGallery .myOwnCarouselClass {
       width: 100%;
-      height: 45vh; }
+      height: 30vh; }
+      .homeGallery .myOwnCarouselClass .slideBox .slideInfo {
+        margin-top: 5%; }
+      .homeGallery .myOwnCarouselClass .slideBox img {
+        height: 30vh;
+        object-fit: cover; }
   .priceTable {
     padding-top: 40px;
     padding-bottom: 70px; }
@@ -503,7 +514,7 @@ header .hero {
   header {
     position: relative; }
     header .hero {
-      height: 75vh;
+      height: 100vh;
       width: 100%; }
       header .hero .myNavClass {
         font-size: 20px;
@@ -527,9 +538,9 @@ header .hero {
       header .hero p {
         line-height: normal;
         position: absolute;
-        top: 70%;
-        left: 10%;
-        font-size: 40px; }
+        top: 50%;
+        left: 2%;
+        font-size: 60px; }
   .aboutBiałogóra h2 {
     font-size: 22px;
     margin: 30px auto; }
@@ -569,7 +580,7 @@ header .hero {
           height: 17vh;
           width: 90%;
           position: absolute;
-          top: 150px;
+          top: 45%;
           margin-left: 5%; }
           .homeGallery .myOwnCarouselClass .slideBox .slideInfo h2 {
             font-size: 20px; }
@@ -583,7 +594,7 @@ header .hero {
           max-height: 500px; }
           .homeGallery .myOwnCarouselClass .slideBox .homeImageClass img {
             width: 100%;
-            height: auto;
+            height: 40vh;
             max-height: 500px;
             position: static;
             margin: 0 auto; }
@@ -592,7 +603,6 @@ header .hero {
         position: absolute;
         top: 45%; }
   .priceTable {
-    padding-top: 60px;
     padding-bottom: 30px; }
     .priceTable th,
     .priceTable td {
@@ -619,5 +629,26 @@ header .hero {
         left: 0;
         width: 100% !important;
         height: 100% !important; } }
+
+@media only screen and (max-width: 350px) {
+  header .hero .myNavClass .flexHamburgerMenu span {
+    height: 6px; }
+  header .hero .myNavClass .respContent {
+    font-size: 15px; }
+  header .hero p {
+    font-size: 50px;
+    top: 65%; }
+  .homeGallery .myOwnCarouselClass {
+    height: 40vh; }
+    .homeGallery .myOwnCarouselClass .slideBox .slideInfo {
+      height: 25vh; }
+    .homeGallery .myOwnCarouselClass .slideBox .homeImageClass img {
+      height: 60vh;
+      object-fit: cover; }
+    .homeGallery .myOwnCarouselClass .carouselArrow1,
+    .homeGallery .myOwnCarouselClass .carouselArrow2 {
+      top: 40%; }
+  .priceTable {
+    padding-top: 140px; } }
 
 /*# sourceMappingURL=style.css.map */
