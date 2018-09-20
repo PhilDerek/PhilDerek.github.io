@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>Białogóra</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <header>
+            <div class="hero" data-parallax="scroll" data-image-src="images/leba_beach_image_to_parallax.jpg">
+                <nav class="navbar navbar-expand-md navbar-light myNavClass" role="navigation">
+                    <div class="container-fluid d-flex justify-content-flex-start" id="scrollToTopPoint">
+                        <div class="navbar-header col-md-1 col-sm-12 flexLogo">
+                            <a class="navbar-brand nav-item myBrandLogo" href="#"><i class="fas fa-bed fa-2x"></i></a>
+                        </div>
+                        <div class="navbar-nav d-md-none col-sm-12 flexHamburgerMenu">
+                            <div id="hamburgerBtn" class="navbar-toggler toggler-example hamburgerMenuClass" type="button" data-toggle="collapse" data-target="#navbarMainContent">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </div>
+                        <div class="collapse navbar-collapse d-none d-md-block col-md-11 col-sm-12 rightContent" id="navbarMainContent">
+                            <ul class="navbar-nav ml-auto respContent col-sm-12">
+                                <li class="nav-item textForNavbar">
+                                    <a id="navbarFirstLink" title="O Białogórze" class="nav-link">O Białogórze</a>
+                                </li>
+                                <li class="nav-item textForNavbar">
+                                    <a id="navbarSecondLink" title="Galeria" class="nav-link">Galeria</a>
+                                </li>
+                                <li class="nav-item textForNavbar">
+                                    <a id="navbarThirdLink" title="Cennik" class="nav-link">Cennik</a>
+                                </li>
+                                <li class="nav-item textForNavbar">
+                                    <a id="navbarFourthLink" title="Kontakt" class="nav-link">Kontakt</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+                <p>Pokoje Białogóra</p>                    
+            </div>                        
+        </header>        
+        <section id="aboutSection" class="aboutBiałogóra">
+            <h2>Zakochaj się w Białogórze</h2>
+            <p> Białogóra to wypoczynkowa miejscowość położona na terenie Nadmorskiego Parku Krajobrazowego, w otoczeniu lasów, między Łebą i Karwią, ok 1,5 kilometra od brzegu morskiego. Od Bałtyku oddziela ją pas sosnowego lasu o szerokości ok 800 m, a w pobliżu znajduje się zalesiona wydma, od której wieś wzięła nazwę. Plaża w Białogórze jest szeroka, piaszczysta i niezatłoczona. Latem działa na niej strzeżone kąpielisko morskie. Na plażę prowadzi asfaltowa dróżka, a ostatni odcinek dojścia do plaży wiedzie po drewnianym deptaku. W Białogórze i okolicy jest wiele ścieżek i szlaków zarówno pieszych jak i rowerowych.</p>
+            <div class="cityGallery">
+                <div class="imageView">
+                    <div id="img1" class="imageChild"></div>
+                </div>
+                <div class="imageView">
+                    <div id="img2" class="imageChild"></div>
+                </div>
+                <div class="imageView">
+                    <div id="img3" class="imageChild"></div>
+                </div>
+                <div class="imageView">
+                    <div id="img4" class="imageChild"></div>
+                </div>
+            </div>
+            <div id="cityModal" class="modalBoxes">
+                <span id="closeIcon">&times;</span>
+                <div id="boxContent">
+                    <div id="modalBox1" class="bigScreenModal boxImg">        
+                        <img src="images/Białogóra_view1.jpg">    
+                    </div>
+                    <div id="modalBox2" class="bigScreenModal boxImg">
+                        <img src="images/Białogóra_view2.jpg">                                                        
+                    </div>
+                    <div id="modalBox3" class="bigScreenModal boxImg">
+                        <img src="images/Białogóra_view3.jpg">                                                                                    
+                    </div>
+                    <div id="modalBox4" class="bigScreenModal boxImg">
+                        <img src="images/Białogóra_view4.jpg">                                                        
+                    </div>
+                    <a id="arrowBack" class="carouselArrow1 arrow"><i class="fas fa-arrow-left fa-2x awesomeArrow"></i></a>                        
+                    <a id="arrowNext" class="carouselArrow2 arrow"><i class="fas fa-arrow-right fa-2x awesomeArrow"></i></a>
+                </div>
+                
+            </div>
+        </section>
+        <section id="gallerySection" class="homeGallery">
+            <div class="galleryTitle">
+                <p>Galeria</p>
+            </div>
+            <div id="homeGalleryCarousel" class="carousel slide myOwnCarouselClass" data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active slideBox">
+                        <div class="carousel-caption slideInfo">
+                            <h2>Nasz piękny dom</h2>
+                            <p>Apartament jest położony ok. 2 km od plaży. Mamy do dyspozycji 3 pokoje: 2 pokoje dwuosobowe oraz 1 pokój trzyosobowy</p>
+                        </div>
+                        <div class="homeImageClass">
+                            <img src="https://cdn.pixabay.com/photo/2017/02/05/00/19/web-design-2038872_960_720.jpg" alt="First slide">
+                        </div>
+                    </div>
+                    <div class="carousel-item slideBox">
+                        <div class="carousel-caption slideInfo">
+                            <h2>Pokoje dwuosobowe</h2>
+                            <p>Nasze pokoje dwuosobowe to przestrzeń i wygoda.</p>
+                        </div>
+                        <div class="homeImageClass">
+                            <img src="https://cdn.pixabay.com/photo/2015/01/14/18/41/home-office-599475_960_720.jpg" alt="Second slide">
+                        </div>
+                    </div>
+                    <div class="carousel-item slideBox">
+                        <div class="carousel-caption slideInfo">
+                            <h2>Pokój trzyosobowy</h2>
+                            <p>Opcja dla rodzin z dzieckiem. Możliwa dostawka w razie przybycia do Nas w liczniejszym gronie</p>
+                        </div>
+                        <div class="homeImageClass">
+                            <img src="https://cdn.pixabay.com/photo/2014/05/02/21/50/home-office-336378_960_720.jpg" alt="Third slide">
+                        </div>
+                    </div>
+                </div>
+                <a class="carousel-control-prev text-info" href="#homeGalleryCarousel" data-slide="prev">
+                    <i class="fas fa-arrow-left fa-3x carouselArrow1"></i>                        
+                </a>
+                <a class="carousel-control-next text-info" href="#homeGalleryCarousel" data-slide="next">
+                    <i class="fas fa-arrow-right fa-3x carouselArrow2"></i>                       
+                </a>
+            </div>            
+        </section>
+        <section id="priceSection" class="priceTable" data-parallax="scroll" data-image-src="images/drink_on_beach_parallax.jpg">
+            <div class="priceHeader">
+                <h2>Cennik</h2>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>\</th>
+                        <th>pokój dwuosobowy</th>
+                        <th>pokój trzyosobowy</th>
+                    </tr>
+                </thead>  
+                <tbody>
+                    <tr>
+                        <td>w sezonie (między 15.06, a 31.08)</td>
+                        <td>100 zł</td>
+                        <td>150 zł</td>
+                    </tr>
+                    <tr>
+                        <td>poza sezonem (między 01.09, a 14.06)</td>
+                        <td>150 zł</td>
+                        <td>180 zł</td>
+                    </tr>
+                </tbody>                    
+            </table>
+        </section>
+        <footer id="contactSection" class="contact">
+            <p>Kontakt</p>
+            <div class="contactMethods">
+                <a href="mailto:dominika.sierakowska@onet.eu" target="_blank"><i class="far fa-envelope fa-4x mailImage"></i></a>
+                <a href="https://www.facebook.com/Pokoje-Go%C5%9Bcinne-Bia%C5%82og%C3%B3ra-791449934392258/" target="_blank"><i class="fab fa-facebook fa-4x facebookImage"></i></a>
+                <i class="fas fa-phone-square fa-4x phoneImage"></i>
+                <p>+48 790 679 410</p>   
+            </div>
+            <div class="mapContainer">
+                <iframe src="https://www.google.com/maps/d/embed?mid=1RkQHqJlp1Ls4JPKTYIk-3UrHmE9wdfUo" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+            </div>
+            <div class="backToTop">
+                <button class="btnToTop" id="toTopBtn"><i class="fas fa-angle-double-up fa-3x"></i></button>
+            </div>
+            <div class="copyrights">
+                <p>Copyright © 2018 Pokoje Białogóra. All rights reserved.</p>
+            </div>
+        </footer>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script src="parallax.js"></script>
+        <script src="js/scripts.js" async defer></script>
+    </body>
+</html>
