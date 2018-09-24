@@ -536,6 +536,8 @@ header .hero {
           align-items: center; }
           header .hero .myNavClass .respContent .textForNavbar {
             border: transparent solid; }
+            header .hero .myNavClass .respContent .textForNavbar .nav-link {
+              padding: .2rem 1rem; }
             header .hero .myNavClass .respContent .textForNavbar:hover {
               border-bottom: none;
               cursor: default;

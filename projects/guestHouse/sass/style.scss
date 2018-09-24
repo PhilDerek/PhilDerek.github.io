@@ -691,6 +691,9 @@ header {
                     align-items: center;
                     .textForNavbar {
                         border: transparent solid;
+                        .nav-link {
+                            padding: .2rem 1rem;
+                        }
                         &:hover {
                             border-bottom: none;
                             cursor: default;
