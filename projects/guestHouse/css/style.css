@@ -631,7 +631,16 @@ header .hero {
         top: 0;
         left: 0;
         width: 100% !important;
-        height: 100% !important; } }
+        height: 100% !important; }
+    .contact .backToTop .btnToTop {
+      width: 50px;
+      height: 50px;
+      min-width: 20px;
+      min-height: 20px;
+      bottom: 10px;
+      right: 10px; }
+      .contact .backToTop .btnToTop .fa-3x {
+        font-size: 2em; } }
 
 @media only screen and (max-width: 350px) {
   header .hero .myNavClass .flexHamburgerMenu span {
