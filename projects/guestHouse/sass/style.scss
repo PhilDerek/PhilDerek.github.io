@@ -13,6 +13,16 @@ $sand-color: #FFE978;
 
 $carousel-transition: .5s;
 
+@mixin opacityBackg() {
+    background-color: rgba(250, 250, 250, .6); 
+}
+
+@mixin flexCentRow() {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
 * {
     box-sizing: border-box;
 }
@@ -37,14 +47,14 @@ header {
         .myNavClass {
             font-size: 26px;
             .flexHamburgerMenu {
-                display: flex;
-                justify-content: center;
-                flex-direction: row;
+                @include flexCentRow();
                 #hamburgerBtn {
                     border: 0;
                     width: 50px;
                     height: 50px;
                     position: relative;
+                    border: 0 white solid;
+                    border-radius: 500px;
                     transform: rotate(0deg);
                     transition: .5s ease-in-out;
                     cursor: pointer;
@@ -116,9 +126,7 @@ header {
         line-height: 1.5em;
     } 
     .cityGallery {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
+        @include flexCentRow();
         width: 100%;
         .imageView {
             width: 100%;
@@ -154,17 +162,10 @@ header {
                     cursor: pointer;
                 }
             }
-            #img1 {
-                background-image: url("../images/Białogóra_view1.jpg");
-            }
-            #img2 {
-                background-image: url("../images/Białogóra_view2.jpg");
-            }
-            #img3 {
-                background-image: url("../images/Białogóra_view3.jpg");
-            }
-            #img4 {
-                background-image: url("../images/Białogóra_view4.jpg");
+            @for $i from 1 through 4 {
+                #img#{$i} {
+                    background-image: url("../images/Białogóra_view#{$i}.jpg");
+                }
             }
         }
     }
@@ -178,7 +179,7 @@ header {
         height: 100%;
         z-index: 2;
         overflow: hidden;
-        background-color:rgba(150, 150, 150, 0.5);
+        @include opacityBackg();
         #closeIcon {
             position: absolute;
             top: 20px;
@@ -300,14 +301,12 @@ header {
     flex-direction: column;
     align-items: center;
     .priceHeader {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
+        @include flexCentRow();
         font-weight: bold;
     }
     table {
         border-collapse: separate !important;
-        background-color: rgba(250, 250, 250, .6);
+        @include opacityBackg();
         border-radius: 10px;        
     }    
 }
@@ -467,8 +466,7 @@ header {
     }
     .mapContainer {
         width: 100%;
-        display: flex;
-        justify-content: center;
+        @include flexCentRow();
         iframe {
             min-width: 640px;
             min-height: 480px;
@@ -674,7 +672,7 @@ header {
             width: 100%;
             .myNavClass {
                 font-size: 20px;
-                background-color: rgba(250, 250, 250, .6);
+                @include opacityBackg();
                 .flexLogo {
                     display: flex;
                     justify-content: center;
@@ -755,7 +753,7 @@ header {
             .slideBox {
                 max-height: 800px;
                 .slideInfo {
-                    background-color: rgba(250, 250, 250, .6);
+                    @include opacityBackg();
                     height: 17vh; 
                     width: 90%;
                     position: absolute;
