@@ -1,0 +1,899 @@
+@font-face {
+    font-family: "anke";
+    src: url("../anke.otf");
+}
+
+$mainColor: #766F57;
+$textMainColor: #FFF;
+$textSecondColor: #cc9c00;
+
+$headline2Size: 3rem;
+$tabletHeadline2Size: 2rem;
+$mobileHeadline2Size: 1.5rem;
+
+@mixin h2Desktop {
+    font-family: "anke";
+    font-size: $headline2Size;
+    margin: 30px auto;
+}
+
+@mixin h2Tablet {
+    font-family: "anke";
+    font-size: $tabletHeadline2Size;
+    margin: 25px auto;
+}
+
+@mixin h2Mobile {
+    font-family: "anke";
+    font-size: $mobileHeadline2Size;
+    margin: 20px auto;
+}
+
+@mixin fullWidth {
+    width: 100%;
+    height: auto;
+}
+
+@mixin flexCent {
+    display: flex;
+    justify-content: center;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+header {
+    height: 100vh;
+    background-color: rgb(163, 175, 187);
+    display: flex;
+    .particleDot {
+        position: absolute;
+        border-radius: 50%;     
+    }
+    @for $i from 1 through 60 {
+        $dotSize: random($limit: 15) + 5 + px;
+        $hash: "#";
+        $unquotedHash: #{$hash};
+        $randomDotColor: $unquotedHash + random($limit: 9) + random($limit: 9) + random($limit: 9) + random($limit: 9) + random($limit: 9) + random($limit: 9);
+        @keyframes particleMoves#{$i} {
+            100% {transform: translate3d((random(90) * 1vw), (random(90) * 1vh), (random(100) * 1px));}
+        }
+        .particleDot:nth-child(#{$i}) {
+            height: $dotSize;
+            width: $dotSize;
+            background-color: $randomDotColor;
+            transform: translate3d((random(90) * 1vw), (random(90) * 1vh), (random(100) * 1px));
+            animation: particleMoves#{$i} 35s infinite;
+            animation-delay: -$i * .2s;
+        }
+    }
+    nav {
+        display: flex;
+        background: transparent;
+        z-index: 3;
+        position: absolute;
+        top: 0;
+        right: 0;
+        #hamburgerBtn {
+            margin-top: 10px;
+            border: 0;
+            width: 26px;
+            height: 26px;
+            position: relative;
+            border: 0 ;
+            border-radius: 500px;
+            transform: rotate(0deg);
+            transition: .5s ease-in-out;
+            cursor: pointer;
+            span{
+                display: block;
+                position: absolute;
+                height: 5px;
+                width: 100%;
+                background: $mainColor;
+                border-radius: 9px;
+                left: 0;
+                transform: rotate(0deg);
+                transition: .25s ease-in-out;
+                &:nth-child(1) {
+                    top: 0px;
+                }
+                &:nth-child(2) {
+                    top: 10px;
+                }
+                &:nth-child(3) {
+                    top: 20px;
+                }                    
+            }
+            &.open span:nth-child(1) {
+                top: 10px;
+                transform: rotate(135deg);
+            }                  
+            &.open span:nth-child(2) {
+                opacity: 0;
+                left: -30px;
+            }                  
+            &.open span:nth-child(3) {
+                top: 10px;
+                transform: rotate(-135deg);
+            }
+        }
+        a {
+            color: $textMainColor;
+            z-index: 3;
+            &:focus {
+                outline: none;
+            }
+            &::-moz-focus-inner {
+                border: 0;
+            }
+        }
+    }
+    .firstLookBox {
+        @include flexCent();
+        align-items: center;
+        flex-direction: column;
+        color: $textMainColor;
+        z-index: 2;
+        a {
+            color: $textMainColor;
+            i {
+                position: relative;
+                animation: nextSectionArrow 1s infinite;
+            }
+        }
+    }
+}
+
+.aboutMeInfo {
+    height: 100vh;
+    @include flexCent();
+    align-items: center;
+    background-image: linear-gradient(to bottom right, aquamarine, purple);
+    .aboutMe {
+        .aboutMeText {
+            color: $textMainColor;
+            h2 {
+                text-align: center;
+            }        
+            p {
+                text-align: justify;
+            }
+        }
+    }
+}
+
+.technologies {
+    @include flexCent();
+    @include fullWidth();
+    flex-wrap: wrap;
+    align-items: center;
+    background-color: $mainColor;
+    h2 {
+        @include fullWidth();
+        text-align: center;
+    }
+    .stackImages {
+        @for $i from 1 through 6 {
+            #tech#{$i} {               
+                @include flexCent();
+                p {
+                    font-family: "anke";
+                    font-weight: bold;
+                }
+            }
+        }
+        .iconChange1 {
+            background-color: $textMainColor;
+            clip-path: polygon(10% 5%, 90% 5%, 85% 80%, 50% 95%, 15% 80%);
+        }
+        .iconChange2 {            
+            background-color: $textMainColor;                
+            @include flexCent();
+        }
+    }
+}
+
+.projects {
+    background-image: url("/images/projectBackgroundImage2.jpeg");
+    background-size: cover;
+    background-attachment: fixed;
+    @include flexCent();
+    flex-wrap: wrap;
+    h2 {
+        @include fullWidth();
+        text-align: center;
+    }
+    .projectBox {
+        width: 80%;
+        @include flexCent();
+        flex-wrap: wrap;
+        @for $i from 1 through 4 {
+            .project#{$i} {
+                position: relative;
+                border-radius: 5%;
+                width: 40%;
+                height: 40%;                
+                img {
+                    border-radius: 5%;
+                    width: 100%;
+                    height: 100%;
+                }
+                .hoverBtns {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%); 
+                    i {
+                        background: $textMainColor;
+                        padding: 5px;
+                        border-radius: 10%;
+                        color: #000;                        
+                    }
+                }
+            }
+        }
+    }
+}
+
+.contact {
+    @include flexCent();
+    @include fullWidth();
+    flex-wrap: wrap;
+    background-color: #000;
+    h2 {
+        @include fullWidth();
+        text-align: center;
+        color: $textMainColor;
+    }
+    .contactInfo {
+        @include fullWidth();
+        @include flexCent();
+        flex-wrap: wrap;
+        align-items: center;
+        flex-direction: column;
+        p {            
+            color: $textMainColor;
+        }
+        .contactMethods {            
+            @include flexCent();
+            flex-direction: row;
+            p {
+                display: none;
+            }
+            .mailBox,
+            .phoneBox,
+            .messengerBox,
+            .linkedInBox {
+                i {
+                    @include flexCent();
+                    background-color: $textMainColor;
+                }
+                .mailIcon {
+                    color: #D50707; 
+                }
+                .phoneIcon {
+                    color: #2DC100;
+                }
+                .messengerIcon {
+                    color: #007FFF;
+                }
+                .linkedInIcon {
+                    color: #FFDA44;
+                }
+            }
+            .mailBox,
+            .messengerBox,
+            .linkedInBox {
+                a:hover {
+                    text-decoration: none;
+                }
+            }
+            .phoneBox {
+                position: relative;
+                p {
+                    width: auto;
+                    position: absolute;
+                    white-space: nowrap;
+                }
+            }
+        }
+        .mapBox {
+            width: 100%;
+            padding: 0;
+            margin: 0;
+            iframe {
+                width: 100%;
+            }
+        }
+    }
+}
+
+footer {
+    @include fullWidth();
+    position: relative;
+    .copyRights {
+        @include fullWidth();
+        background-color: $mainColor;
+        padding: 20px;
+        position: absolute;
+        top: -4px;
+        left: 0;
+    }
+    .backToTop {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 5;
+        .btnToTop {
+            display: none;
+            outline: none;
+            width: 50px;
+            height: 50px;
+            background-color: rgb(95, 75, 139);
+            border-radius: 50%;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            color: $textMainColor;
+            cursor: pointer;
+            &:hover {
+                color: #000;
+                background-color: rgb(125, 105, 139);
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    nav {
+        justify-content: flex-end;
+        font-size: 1.5rem;
+        .menuTop {
+            display: flex;
+            flex-direction: row;
+        }
+        a {
+            transition: all .4s ease-in-out;
+            font-weight: bold;
+            margin: 15px;
+            &:hover {
+                color: $mainColor;
+                transform: scale(1.1);
+                border-bottom: 3px $mainColor solid;
+            }
+        }
+    }
+    .firstLookBox {
+        h1 {
+            font-size: 4rem;
+            margin: 30px auto;
+        }
+        p {
+            font-size: 18px;
+        }
+        a {
+            font-size: 35px;
+            border: none;
+        }
+    }
+    .aboutMe {
+        @include flexCent();
+        align-items: center;
+        img {
+            width: 200px;
+            height: 200px;
+        }
+        .aboutMeText {
+            padding: 30px;
+            h2 {
+                font-size: 3rem;
+                margin-bottom: 20px;
+            }
+        }
+    }
+    .technologies {
+        padding: 40px 150px;
+        h2 {
+            @include h2Desktop();
+        }
+        .stackImages {
+            @include flexCent();
+            @include fullWidth();
+            flex-wrap: wrap;
+            @for $i from 1 through 6 {
+                #tech#{$i} {
+                    flex-direction: column;
+                    align-items: center;
+                    margin: 70px;
+                    width: 30%; 
+                    i {
+                        font-size: 100px;
+                    }                  
+                    p {
+                        font-size: 50px;    
+                    }
+                }
+            }
+            .iconChange2 {
+                line-height: 88px;
+                width: 90px;
+            }            
+        }    
+    }
+    .projects {
+        h2 {
+            @include h2Desktop();
+        }
+        .projectBox {
+            @for $i from 1 through 4 {
+                .project#{$i} {
+                    margin: 30px;
+                    &:hover img {
+                        filter: brightness(35%);
+                    }
+                    &:hover .hoverBtns {
+                        display: initial;
+                    }
+                    .hoverBtns {
+                        display: none;
+                        i {
+                            font-size: 30px;
+                            margin: 10px;
+                            &:hover {
+                                background-color: rgb(194, 201, 207);
+                                color: $mainColor;
+                                transform: scale(1.1);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .contact {
+        h2 {
+            @include h2Desktop();
+        }
+        .contactInfo {            
+            > p {
+                font-size: 23px;
+                margin: 30px auto;
+            }
+            .contactMethods {
+                margin: 30px auto;
+                .mailBox,
+                .phoneBox,
+                .messengerBox,
+                .linkedInBox {
+                    i {
+                        font-size: 55px;
+                        margin: 30px;
+                        line-height: 40px;
+                        cursor: pointer;
+                        &:hover {
+                            transform: scale(1.2);
+                        }
+                    }
+                    .mailIcon {                           
+                        width: 50px;                       
+                    }
+                    .phoneIcon {    
+                        width: 45px;
+                    }
+                    .messengerIcon {    
+                        line-height: 32px;
+                        width: 32px;
+                    }
+                }
+                .phoneBox {
+                    p {
+                        top: 90px;
+                        left: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 1199px) {
+    nav {
+        justify-content: flex-end;
+        font-size: 1.2rem;
+        .menuTop {
+            display: flex;
+            flex-direction: row;
+            a {
+                margin: 10px;
+            }
+        }        
+    }
+    .firstLookBox {
+        h1 {
+            font-size: 3rem;
+            margin: 30px auto;
+        }
+        p {
+            font-size: 18px;
+        }
+        a {
+            font-size: 32px;
+            border: none;
+        }
+    }
+    .aboutMe {
+        @include flexCent();
+        align-items: center;
+        img {
+            width: 170px;
+            height: 170px;
+        }
+        .aboutMeText {
+            float: right;
+            padding: 10px 30px;
+            h2 {
+                font-size: 2rem;
+                margin-bottom: 10px;
+            }
+        }
+    }
+    .technologies {
+        padding: 30px 100px;
+        h2 {
+            @include h2Tablet();
+        }
+        .stackImages {
+            @include flexCent();
+            @include fullWidth();
+            flex-wrap: wrap;
+            @for $i from 1 through 6 {
+                #tech#{$i} {
+                    flex-direction: column;
+                    align-items: center;
+                    margin: 50px;
+                    width: 30%; 
+                    i {
+                        font-size: 80px;
+                    }                  
+                    p {
+                        font-size: 35px;    
+                    }
+                }
+            }
+            .iconChange2 {
+                line-height: 75px;
+                width: 70px;
+            }        
+        }
+    }
+    .projects {
+        h2 {
+            @include h2Tablet();
+        }
+        .projectBox {
+            @for $i from 1 through 4 {
+                .project#{$i} {
+                    margin: 20px;
+                    img {
+                        filter: brightness(35%);
+                    }
+                    .hoverBtns {
+                        i {
+                            font-size: 25px;
+                            margin: 8px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .contact {
+        h2 {
+            @include h2Tablet();
+        }
+        .contactInfo {            
+            p {
+                font-size: 18px;
+                margin: 20px auto;
+            }
+            .contactMethods {
+                margin: 30px auto;
+                .mailBox,
+                .phoneBox,
+                .messengerBox,
+                .linkedInBox {
+                    i {
+                        font-size: 55px;
+                        margin: 30px;
+                        line-height: 40px;
+                        cursor: pointer;
+                    }
+                    .mailIcon {                           
+                        width: 50px;                       
+                    }
+                    .phoneIcon {    
+                        width: 45px;
+                    }
+                    .messengerIcon {    
+                        line-height: 32px;
+                        width: 32px;
+                    }
+                }
+                .phoneBox {
+                    p {
+                        top: 70px;
+                        left: -10px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    nav {
+        a {
+            margin: 5px;
+        }
+    }
+    .firstLookBox {
+        h1 {
+            font-size: 2rem;
+            margin: 30px auto;
+        }
+        p {
+            font-size: 16px;
+        }
+        a {
+            font-size: 32px;
+            border: none;
+        }
+    }
+    .aboutMe {
+        flex-direction: column;
+        .aboutMeText {
+            padding: 30px;
+            h2 {
+                font-size: 2rem;
+                margin-bottom: 10px;
+            }
+        }
+    }
+    .projects {
+        background-position: right center;
+        .projectBox {
+            margin-bottom: 30px;
+        }
+    }
+    .contact {
+        h2 {
+            @include h2Tablet();
+        }
+        .contactInfo {            
+            p {
+                font-size: 18px;
+                margin: 20px auto;
+                width: 80%;
+            }
+            .contactMethods {
+                margin: 30px auto;
+                .mailBox,
+                .phoneBox,
+                .messengerBox,
+                .linkedInBox {
+                    i {
+                        font-size: 55px;
+                        margin: 30px;
+                        line-height: 40px;
+                        cursor: pointer;
+                    }
+                    .mailIcon {                           
+                        width: 50px;                       
+                    }
+                    .phoneIcon {    
+                        width: 45px;
+                    }
+                    .messengerIcon {    
+                        line-height: 32px;
+                        width: 32px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    header {
+        .navbarMain {
+            nav {
+                background-color: rgba(250, 250, 250, .6);
+                padding-bottom: 5px;
+                @include fullWidth();
+                .menuTop {
+                    flex-direction: column;
+                    display: none;
+                    a {
+                        text-align: center;
+                    }
+                }
+            }
+        }   
+    }
+    .aboutMe {
+        @include fullWidth();
+        margin-top: 50px;
+        img {
+            width: 100px;
+            height: 100px;
+        }
+        .aboutMeText {
+            padding: 15px;
+            h2 {
+                font-size: 2rem;
+                margin-bottom: 10px;
+            }
+            p {
+                font-size: 15px;
+            }
+        }
+    }
+    .technologies {
+        padding: 20px 50px;
+        h2 {
+            @include h2Mobile();
+        }
+        .stackImages {
+            @include flexCent();
+            @include fullWidth();
+            flex-wrap: wrap;
+            @for $i from 1 through 6 {
+                #tech#{$i} {
+                    flex-direction: column;
+                    align-items: center;
+                    margin: 15px;
+                    width: 100%; 
+                    i {
+                        font-size: 50px;
+                    }                  
+                    p {
+                        font-size: 20px;    
+                    }
+                }
+            }
+            .iconChange2 {
+                line-height: 45px;
+                width: 45px;
+            }        
+        }
+    }
+    .projects {
+        h2 {
+            @include h2Mobile();
+        }
+        .projectBox {
+            @for $i from 1 through 4 {
+                .project#{$i} {
+                    width: 100%;
+                    height: 150px;
+                    margin: 20px;
+                }
+            }
+        }
+    }
+    .contact {
+        h2 {
+            @include h2Mobile();
+        }
+        .contactInfo {            
+            > p {
+                font-size: 15px;
+                margin: 15px auto;
+                width: 80%;
+            }
+            .contactMethods {
+                margin: 20px auto;
+                .mailBox,
+                .phoneBox,
+                .messengerBox,
+                .linkedInBox {
+                    i {
+                        font-size: 40px;
+                        margin: 20px;
+                        line-height: 30px;
+                        cursor: pointer;
+                    }
+                    .mailIcon {                           
+                        width: 35px;                       
+                    }
+                    .phoneIcon {    
+                        width: 32px;
+                    }
+                    p {
+                        top: 45px;
+                        left: -10px;
+                        font-size: 13px;
+                    }
+                    .messengerIcon {    
+                        line-height: 22px;
+                        width: 22px;
+                    }
+                }
+            }
+            .mapBox {
+                iframe {
+                    height: 300px;
+                }
+            }
+        }
+    }
+    footer {
+        .copyRights {
+            padding: 15px;
+            p {
+                font-size: 10px;
+            }
+        }               
+    }
+}
+
+@media only screen and (max-width: 350px) {
+    header {
+        .navbarMain {
+            nav {
+                .menuTop {
+                    a {
+                        margin: 0;
+                    }
+                }
+            }
+        }
+        .firstLookBox {
+            justify-content: flex-end;
+            a {
+                margin-top: 50px;
+            }
+        }   
+    }
+    .aboutMeInfo {
+        height: auto;
+        .aboutMe {
+            margin: 50px auto;
+            .aboutMeText {
+                p {
+                    text-align: left;
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+    .projects {
+        .projectBox {
+            @for $i from 1 through 4 {
+                .project#{$i} {
+                    .hoverBtns {
+                        i {
+                            font-size: 25px;
+                            margin: 6px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@keyframes nextSectionArrow {
+    0% {top: 0;}
+    25% {top: 2px;}
+    50% {top: 4px;}
+    75% {top: 5px;}
+    100% {top: 6px;}
+}

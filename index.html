@@ -7,85 +7,197 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
-        <link rel="stylesheet" type="text/css" media="screen" href="css/style.min.css" />        
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="css/reset.min.css">
+        <link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />        
     </head>
     <body>
-        <header>
+        <header id="header">
+            <div class="particleDot"></div>
+            <div class="particleDot"></div>
+            <div class="particleDot"></div>
+            <div class="particleDot"></div>
+            <div class="particleDot"></div>
+            <div class="particleDot"></div>
+            <div class="particleDot"></div>
+            <div class="particleDot"></div>
+            <div class="particleDot"></div>
+            <div class="particleDot"></div>
+            <div class="particleDot"></div>
+            <div class="particleDot"></div>
+            <div class="particleDot"></div>
+            <div class="particleDot"></div>
+            <div class="particleDot"></div>
+            <div class="particleDot"></div>
+            <div class="particleDot"></div>
+            <div class="particleDot"></div>
+            <div class="particleDot"></div>
+            <div class="particleDot"></div>
+            <div class="particleDot"></div>
+            <div class="particleDot"></div>
+            <div class="particleDot"></div>
+            <div class="particleDot"></div>
+            <div class="particleDot"></div>
+            <div class="particleDot"></div>
+            <div class="particleDot"></div>
+            <div class="particleDot"></div>
+            <div class="particleDot"></div>
+            <div class="particleDot"></div>
+            <div class="particleDot"></div>
+            <div class="particleDot"></div>
+            <div class="particleDot"></div>
+            <div class="particleDot"></div>
+            <div class="particleDot"></div>
+            <div class="particleDot"></div>
+            <div class="particleDot"></div>
+            <div class="particleDot"></div>
+            <div class="particleDot"></div>
+            <div class="particleDot"></div>
+            <div class="particleDot"></div>
+            <div class="particleDot"></div>
+            <div class="particleDot"></div>
+            <div class="particleDot"></div>
+            <div class="particleDot"></div>
+            <div class="particleDot"></div>
+            <div class="particleDot"></div>
+            <div class="particleDot"></div>
+            <div class="particleDot"></div>
+            <div class="particleDot"></div>
+            <div class="particleDot"></div>
+            <div class="particleDot"></div>
+            <div class="particleDot"></div>
+            <div class="particleDot"></div>
+            <div class="particleDot"></div>
+            <div class="particleDot"></div>
+            <div class="particleDot"></div>
+            <div class="particleDot"></div>
+            <div class="particleDot"></div>
+            <div class="particleDot"></div>               
             <div class="navbarMain">
-                <nav class="nav">
-                    <a class="nav-link active" href="#">Home</a>
-                    <a class="nav-link" href="#">Technologie</a>
-                    <a class="nav-link" href="#">Projekty</a>
-                    <a class="nav-link" href="#">Kontakt</a>
+                <nav id="myNavClass" class="nav container">
+                    <div id="hamburgerBtn" class="navbar-toggler toggler-example d-md-none col-sm-12" data-toggle="collapse" data-target="#menuTop">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <div class="menuTop">
+                        <a class="nav-link active" href="#aboutMeSection">O mnie</a>
+                        <a class="nav-link" href="#technologySection">Technologie</a>
+                        <a class="nav-link" href="#projectSection">Projekty</a>
+                        <a class="nav-link" href="#contactSection">Kontakt</a>
+                    </div>                    
                 </nav>
             </div>
-            <h1>Kilka słów o sobie</h1>
-            <p>Witam, nazywam się Filip Derewońko i bardzo Mi miło z powodu Twojej wizyty na stronie mojego portfolio. Mam 25 lat i mieszkam w Warszawie. Skończyłem studia inżynierskie na wydziale geologii na Uniwersytecie Warszawskim, jednak postanowiłem, że muszę coś w swoim życiu zmienić i zmieniłem swoją profesję na programowanie. Jestem bardzo zadowolony z tego posunięcia. Interesuję się, oczywiście poza programowaniem, sportem (w szczególności piłką nożną), filmami, grami komputerowymi. Lubię nowe wyzwania oraz pracę w zespole. Zawsze staram się być dokładny w tym co robię.</p>
+            <div class="firstLookBox container">
+                <h1>Junior Front-End Developer</h1>
+                <p>Zapraszam na swoją stronę portfolio. W dalszych sekcjach dowiesz się wszystkich ważnych rzeczy o mnie.</p>
+                <a href="#aboutMeSection" class="button"><i class="fas fa-angle-double-down"></i></a>
+            </div>
         </header>
-        <section class="technologies">
-            <h2>Mój stack technologiczny</h2>
+        <section id="aboutMeSection" class="aboutMeInfo">
+            <div class="aboutMe container">
+                <img src="https://via.placeholder.com/200x200" alt="official autor's photo">
+                <div class="aboutMeText">
+                    <h2>Kilka słów o sobie</h2>
+                    <p>Nazywam się Filip Derewońko i bardzo Mi miło z powodu Twojej wizyty na stronie mojego portfolio. Mam 25 lat i mieszkam w Warszawie. Skończyłem studia inżynierskie na wydziale geologii na Uniwersytecie Warszawskim, jednak postanowiłem, że muszę coś w swoim życiu zmienić. Ukończyłem bootcamp Front-End Developera w szkole programowania Kodilla. Mam za sobą również kurs JavaScript na platformie Udemy. Interesuję się programowaniem, sportem (w szczególności piłką nożną), filmami, grami komputerowymi. Lubię nowe wyzwania oraz pracę w zespole. Zawsze staram się być dokładny w tym co robię.</p>
+                </div>
+            </div>
+        </section>
+        <section id="technologySection" class="technologies">
+            <h2>Mój stack technologiczny</h2>         
             <div class="stackImages">
                 <div id="tech1">
-                    <i class="devicon-html5-plain colored"></i>
+                    <i class="devicon-html5-plain colored iconChange1"></i>
                     <p>HTML</p>
                 </div>
-            </div>
-            <div class="stackImages">
                 <div id="tech2">
-                    <i class="devicon-css3-plain colored"></i>
+                    <i class="devicon-css3-plain colored iconChange1"></i>
                     <p>CSS</p>
                 </div>
-            </div>
-            <div class="stackImages">
                 <div id="tech3">
                     <i class="devicon-sass-original colored"></i>
                     <p>Sass</p>
                 </div>
-            </div>
-            <div class="stackImages">
                 <div id="tech4">
-                    <i class="devicon-javascript-plain colored"></i>
+                    <i class="devicon-javascript-plain colored iconChange2"></i>
                     <p>JavaScript</p>
                 </div>
-            </div>
-            <div class="stackImages">
                 <div id="tech5">
-                    <i class="devicon-bootstrap-plain colored"></i>
+                    <i class="devicon-bootstrap-plain colored iconChange2"></i>
                     <p>Bootstrap</p>
                 </div>
-            </div>
-            <div class="stackImages">
                 <div id="tech6">
                     <i class="devicon-grunt-plain colored"></i>
                     <p>Grunt</p>
                 </div>
             </div>
         </section>
-        <section class="projects">
+        <section id="projectSection" class="projects parallaxEffect">
             <h2>Moje projekty</h2>
             <div class="projectBox">
                 <div class="project1">
-                    <a href="https://philderek.github.io/projects/guestHouse/index.html" target="_blank">guestHouse</a>
+                    <img src="/images/projectGuestHousePhoto.jpg" alt="guest house project screenshot">
+                    <div class="hoverBtns">
+                        <a href="https://philderek.github.io/projects/guestHouse/index.html" target="_blank"><i class="far fa-eye"></i></a>
+                        <a href="https://github.com/PhilDerek/PhilDerek.github.io/tree/master/projects/guestHouse" target="_blank"><i class="fas fa-code"></i></a>
+                    </div>                    
                 </div>
                 <div class="project2">
+                    <img src="/images/rockPaperScissorsPhoto.jpg" alt="game called 'rock, paper, scissors' screenshot">
+                    <div class="hoverBtns">
+                        <a href="https://philderek.github.io/projects/rockPaperScissors/index.html" target="_blank"><i class="far fa-eye"></i></a>
+                        <a href="https://github.com/PhilDerek/PhilDerek.github.io/tree/master/projects/rockPaperScissors" target="_blank"><i class="fas fa-code"></i></a>
+                    </div> 
                 </div>
                 <div class="project3">
+                    <img src="/images/notAvailablePage.jpg" alt="future project number 1">
+                    <div class="hoverBtns">
+                        <a href="https://philderek.github.io/" target="_blank"><i class="far fa-eye"></i></a>
+                        <a href="https://github.com/PhilDerek/PhilDerek.github.io" target="_blank"><i class="fas fa-code"></i></a>
+                    </div>
                 </div>
                 <div class="project4">
+                    <img src="/images/notAvailablePage.jpg" alt="future project number 2">
+                    <div class="hoverBtns">
+                        <a href="#" target="_blank"><i class="far fa-eye"></i></a>
+                        <a href="#" target="_blank"><i class="fas fa-code"></i></a>
+                    </div>
                 </div>
             </div>
         </section>
-        <section class="contact">
+        <section id="contactSection" class="contact">
             <h2>Kontakt</h2>
-            <p>W razie jakichkolwiek pytań, lub po prostu chęci skontakowania się ze mną, oto poniższe sposoby:</p>
             <div class="contactInfo">
-                <div class="mapBox">
-                </div>
+                <p>W razie jakichkolwiek pytań, ofert lub po prostu chęci skontakowania się ze mną, oto poniższe sposoby:</p>
                 <div class="contactMethods">
+                    <div class="mailBox">
+                        <a href="mailto:filder100@gmail.com" target="_top"><i class="far fa-envelope mailIcon"></i></a>
+                    </div>
+                    <div class="phoneBox">
+                        <i class="fas fa-phone-square phoneIcon"></i>
+                        <p>+48 606 195 950</p>
+                    </div>
+                    <div class="messengerBox">
+                        <a href="https://www.facebook.com/messages/t/filip.derewonko" target="_blank"><i class="fab fa-facebook-messenger messengerIcon"></i></a>
+                    </div>
+                    <div class="linkedInBox">
+                        <i class="fab fa-linkedin linkedInIcon"></i>
+                    </div>
+                </div>
+                <div class="mapBox">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d312776.97976712295!2d20.781009198346794!3d52.233026860140804!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471ecc669a869f01%3A0x72f0be2a88ead3fc!2sWarszawa!5e0!3m2!1spl!2spl!4v1537797038095" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
                 </div>
             </div>
         </section>
-
-        <script src="js/scripts.min.js"></script>
+        <footer>
+            <div class="copyRights">
+                <p>Copyright © 2018 Filip Derewońko. All rights reserved.</p>
+            </div>
+            <div class="backToTop">
+                <button id="toTopBtn" class="btnToTop"><i class="fas fa-arrow-up fa-2x"></i></button>
+            </div>
+        </footer>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="js/scripts.js"></script>
     </body>
 </html>
