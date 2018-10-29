@@ -1,0 +1,245 @@
+body {    
+    box-sizing: border-box;
+    background-color: rgba(0, 0, 0, 0.3);
+    margin: 0;
+}
+
+/* title styles */
+#title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+#title p {
+    text-align: center;
+}
+
+.lettersTitle {
+    font-size: 25px;    
+}
+
+#rockText {
+    color: silver;
+}
+
+#paperText {
+    color: red;
+}
+
+#scissorsText {
+    color: green;
+}
+
+/* newGame styles */
+#newGame p {
+    font-size: 26px; /* Po dodaniu SASSa zrobić całość styli stąd jako 1 regułę */
+    font-weight: bold;
+    padding-top: 20px;
+    font-family: 'Indie Flower', cursive;
+}
+
+.gameName {
+    color: aqua;
+    font-size: 35px;
+    display: block;
+}
+
+#newGame button {
+    margin: 30px auto;
+    width: 30%;
+    font-size: 24px;
+    background-color: goldenrod;
+    border: none;
+}
+
+/* playerNameWindow styles */
+#playerNameWindow {
+    text-align: center;
+    background-color: black;
+    color: white;   
+    border-radius: 15px;
+    width: 600px;
+    margin: auto;
+    margin-top: 15%;
+    padding-bottom: 20px;
+}
+
+#playerNameWindow p {
+    font-size: 26px;
+    font-weight: bold;
+    padding-top: 20px;
+    font-family: 'Indie Flower', cursive;
+}
+
+#playerNameWindow button {
+    display: block;
+    margin: 30px auto;
+    width: 20%;
+    font-size: 24px;
+    background-color: goldenrod;
+    border: none;
+}
+
+/* gameStarted styles */
+#gameStarted {
+    margin-top: 5%;
+}
+
+#gameButtons {
+    display: flex;
+    justify-content: center;
+}
+
+#gameButtons button {
+    margin: 0 15px;
+    box-shadow: 3px 3px #888888;
+    border: none;
+}
+
+#gameButtons button:active {
+    box-shadow: 1px 1px #888888;
+    transform: translateY(2px);
+}
+
+.btn-rps {
+   width: 130px;
+   height: 60px;
+   text-align: center;
+   background-color: #ebebe0;
+}
+
+.btn-rps img {
+    width: 30px;
+}
+
+.btn-rps:hover {
+    background-color: #B0A7A7;
+}
+
+#names {
+    display: flex;
+    justify-content: space-around;
+    padding-left: 10px;   
+}
+
+#score {
+    display: flex;
+    justify-content: space-around;
+}
+
+.scoreEffects {
+    color: #08DF08;
+    font-weight: bold;
+    animation: BigScoreEffect 1s;
+    margin-left: -22px;
+}
+
+#choices {
+    display: flex;
+    justify-content: space-around;
+    visibility: hidden;
+}
+
+/* End of game */
+#gameEnd1,
+#gameEnd2 {
+    display: none;
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 200px;
+    margin-top: 15%;
+}
+
+.box {
+    text-align: center;
+    width: 600px;
+    border-radius: 15px;
+    background-color: black;
+    color: white;
+}
+
+.box p {
+    font: 30px bold;
+    font-family: 'Indie Flower', cursive;
+}
+
+.box button {
+    width: 30%;
+    font-size: 24px;
+    background-color: goldenrod;
+    border: none;
+}
+
+.flex-item {
+    margin: 25px;
+}
+
+#startGame:hover,
+#finalStart:hover,
+.reloadButton:hover {
+    background-color: aqua;
+    color: black;
+}
+
+#selectedIcons {
+    display: flex;
+    justify-content: space-around;
+}
+
+#selectedIcons span {
+    width: 50px;
+    height: 50px;
+}
+
+.playerBattleAnimationClass {
+    animation: playerBattleAnimation 1s;
+}
+
+.computerBattleAnimationClass {
+    animation: computerBattleAnimation 1s;
+}
+
+@keyframes playerBattleAnimation {
+    0% {
+        transform: translate(0px, 0px) scale(1.0, 1.0);
+    }
+    50% {
+        transform: translate(250px, 0px) scale(2.0, 2.0);
+    }
+    100% {
+        transform: translate(0px, 0px) scale(1.0, 1.0);
+    }
+}
+
+@keyframes computerBattleAnimation {
+    0% {
+        transform: translate(0px, 0px) scale(1.0, 1.0);
+    }
+    50% {
+        transform: translate(-250px, 0px) scale(2.0, 2.0);
+    }
+    100% {
+        transform: translate(0px, 0px) scale(1.0, 1.0);
+    }
+}
+
+@keyframes BigScoreEffect {
+    0% {
+        transform: scale(1.0, 1.0);
+    }
+    50% {
+        transform: scale(3.0, 3.0);
+    }
+    100% {
+        transform: scale(1.0, 1.0);
+    }
+}

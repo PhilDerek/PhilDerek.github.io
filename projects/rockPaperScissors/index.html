@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>kamień, papier, nożyce</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+</head>
+<body>
+    <main id="bigImage">
+        <div id="title">
+            <div>
+                <p>Welcome to the game <span id="rockText" class="lettersTitle">Rock</span> <span id="paperText" class="lettersTitle">Paper</span> <span id="scissorsText" class="lettersTitle">Scissors</span></p>
+                <p>Gain 10 points to win the game</p>
+            </div>
+        </div>
+        <div id="newGame" class="flex-container">
+            <div class="box">
+                <p>Welcome to the game <span class="gameName">Rock, paper, scissors!</span></p>
+                <button id="startGame" class="flex-item btn btn-primary">New Game</button>
+            </div> 
+        </div>
+        <div id="playerNameWindow" class="flex-container">
+            <div class="box">
+                <p>Enter Your name:</p>
+                <input type="text" id="inputName" placeholder="name">
+                <button id="finalStart" class="flex-item btn btn-primary">Let's start</button>
+            </div>
+        </div>
+        <div id="gameStarted">
+            <div id="gameButtons">
+                <button type="button" id="rock" class="btn btn-light btn-lg btn-rps"><img src="images/icons8-rock-50.png"> Rock</button>
+                <button id="paper" class="btn btn-light btn-lg btn-rps"><img src="images/icons8-paper-50.png"> Paper</button>
+                <button id="scissors" class="btn btn-light btn-lg btn-rps"><img src="images/icons8-scissors-50.png"> Scissors</button>
+            </div>
+            <div id="names">
+                <span id="playerName">Player</span>
+                <span id="computerName">Computer</span>
+            </div>
+            <div id="score">
+                <p id="playerScore">0</p>
+                <p id="computerScore">0</p>
+            </div>
+            <div id="choices">
+                <span id="playerPick"></span>
+                <span id="computerPick"></span>
+            </div>            
+        </div>
+        <div id="selectedIcons">
+            <span id="playerSelectedIcon"></span>
+            <span id="computerSelectedIcon"></span>
+        </div>
+        <div id="gameEnd1" class="flex-container">
+            <div class="box">
+                <p class="flex-item">You Won! Well done!</p>
+                <button class="reloadButton flex-item btn btn-primary">Play again</button>
+            </div>                        
+        </div>
+        <div id="gameEnd2" class="flex-container">
+            <div class="box">
+                <p class="flex-item">You lost! Dont't give up!</p>
+                <button class="reloadButton flex-item btn btn-primary">Play again</button>
+            </div>    
+        </div>
+    </main>
+    
+    <script src="js/scripts.js"></script>
+</body>
+</html>
