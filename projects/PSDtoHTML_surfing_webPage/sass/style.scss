@@ -1,0 +1,1044 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+$boardBackgroundColor: #e8e8e8;
+$navFont: 'Open Sans', sans-serif;
+
+@mixin blueText() {
+    font-family: $navFont;
+    color: rgb(3, 98, 206);
+}
+
+@mixin articleTextComposure() {
+    h2 {
+        font-weight: bold;
+        u {
+            text-decoration-color: #5da8ef;
+        }
+    }
+    p {
+        color: #616161;
+        font-family: $navFont;
+    }
+    a {
+        display: inline-block;
+        color: #000;
+        border-bottom: #5da8ef 2px solid;
+        &:hover {
+            text-decoration: none;
+        }
+        &:active,
+        &:focus {
+            outline: 0;
+        }
+    }
+}
+
+@mixin sociableIconStyle {
+    .sociableIcon {
+        color: #616161;
+    }
+    .icon1:hover {
+        color: rgb(224, 228, 3);
+    }
+    .icon2:hover {
+        color: #1DA1F2;
+    }
+    .icon3:hover {
+        color: #000;
+    }
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    position: relative;
+    overflow-x: hidden;
+}
+
+header {
+    position: relative;
+    height: 100vh;
+    .navStyle {
+        font-family:  $navFont;
+        .linkStyle {
+            color: #FFF;
+        }
+    }
+    .rightPartOfHeader {
+        color: grey;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        text-transform: uppercase;
+        word-spacing: 10px;
+        position: absolute;
+        transform: rotate(-90deg);
+        .headerSociableIcons {
+            .sociableIcon {
+                transform: rotate(90deg);
+                margin: 0 20px;
+            }
+            @include sociableIconStyle();
+        }
+    }
+    .headerImage {
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: -1;
+        height: 90%;
+    }
+    .mainHeaderText {
+        position: absolute;
+        top: 50%;
+        left: 3%;
+        p {
+            font-family: $navFont;
+        }
+        p:nth-of-type(1) {
+            color: rgb(3, 98, 206);
+        }
+        p:nth-of-type(2) {           
+        width: 35%;
+        color: gray;
+        }
+        h1 {
+            font-weight: bold;
+        }
+    }
+}
+
+.quoteBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    p {
+        font-family: $navFont;
+        margin: 10px auto;
+        font-weight: bold;
+    }
+}
+
+.mediaContent {
+    position: relative;
+    width: 100%;
+    .mediaContentImage {
+        position: relative;
+        &:hover {
+            z-index: 5;
+        }
+    }
+    .mediaContentText {
+        font-family: $navFont;
+        color: grey;
+        width: 20%;
+        a {
+            display: inline-block;
+            color: #000;
+            padding-bottom: 5px;
+            border-bottom: #5da8ef 2px solid;
+            letter-spacing: 2px;
+            &:hover {
+                text-decoration: none;
+            }
+        }
+    }
+    iframe {
+        position: absolute;
+        right: 0;
+        width: 60%;
+        height: 70%;
+        z-index: 0;
+    }
+}
+.surfboardShop {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    position: relative;
+    .shopSectionTitle {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100vw;
+        p {
+            @include blueText();
+        }    
+    }
+    .boardBox {
+        display: flex;
+        flex-direction: row;
+        width: 200%;
+        position: relative;
+        top: 0;
+        left: 0;
+        @for $i from 1 through 6 {
+            .surfboard#{$i} {
+                position: relative;
+                width: 100%;
+            }
+        }
+        .boardBackground {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            background-color: #ececec;
+            z-index: -1;
+        }
+        img {
+            position: relative;
+        }
+        .surfboardText {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            p {
+                color: grey;
+                font-family: $navFont;
+            }
+        }
+        .surfboardBuyAndPrice {
+            position: absolute;
+            top: 70%;
+            left: 65%;
+            p {
+                color: #ce60a8; 
+            }
+            a {
+                font-family: $navFont;
+                font-weight: bold;
+                letter-spacing: 3px;
+                color: #000;
+                display: inline-block;
+                margin-top: 7px;
+                &:hover {
+                    text-decoration: none;
+                }
+                &:active,
+                &:focus {
+                    outline: 0;
+                }
+            }
+        }
+    }
+    .arrowShop {
+        position: absolute;
+        top: 50%;
+        cursor: pointer;
+    }
+    i:nth-of-type(1) {
+        left: 20px;
+    }
+    i:nth-of-type(2) {
+        right: 20px;
+    }
+    > a {
+        display: inline-block;
+        color: #000;
+        padding-bottom: 5px;
+        border-bottom: #5da8ef 2px solid;
+        letter-spacing: 2px;
+        &:hover {
+            text-decoration: none;
+        }
+    }
+}
+
+.surfTraining {
+    display: block;
+    margin-left: 10%;
+    .surfTrainingText {
+        float: left;
+        width: 30%;
+        margin-top: 15%;
+        @include articleTextComposure();
+        a {
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+    }
+    img {
+        width: 70%;
+        z-index: 2;
+    }
+}
+
+.surfTraining2 {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    &:hover {
+        z-index: 3;
+    }
+    .surfTrainingText2 {
+        width: 40%;
+        display: flex;
+        justify-content: flex-end;
+        flex-direction: column;
+        @include articleTextComposure();
+        a {
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+    }
+    img {
+        z-index: -1;
+        margin-left: 15%;
+    }
+}
+
+.newsletterSubscription {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 30%;
+    h2 {
+        font-weight: bold;
+    }
+    p {
+        color: #616161;
+        font-family: $navFont;
+        text-align: center;
+    }
+    .subscribeForm {
+        width: 100%;
+        .emailInput {
+            width: 87%;
+            float: left;
+        }
+        .pushEmailBtn {
+            background-color: #5da8ef;
+            color: #FFF;
+            border: none;
+        }
+    }    
+}
+
+.contacts {
+    width: 100%;
+    &::after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+    .contactImageSunset {
+        float: left;
+    }
+    .contactsText {
+        float: right;
+        width: 39.6%;
+        p:nth-of-type(1) {
+            color: #616161;
+            font-family: $navFont;
+        }
+        h2 {
+            font-weight: bold;
+        }
+        p:nth-of-type(2) {
+            color: #5da8ef;
+            cursor: pointer;
+            font-family: $navFont;
+            text-transform: uppercase;
+            word-spacing: 3px;
+            letter-spacing: 2px;
+            font-weight: bold;
+            display: inline-block;
+            border-bottom: #5da8ef 3px solid;
+        }
+    }
+}
+
+.repeatNav {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    .footerNav {
+        font-family: $navFont;
+        text-transform: uppercase;
+        a {
+            color: #000;
+        }
+    }
+    .sociableIconsFooter {
+        .sociableIcon {
+            margin: 0 20px;
+        }
+        @include sociableIconStyle();
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    header {
+        .rightPartOfHeader {
+            width: 550px;
+            top: 45%;
+            right: -300px;
+        }
+        .headerImage {
+            width: 90%;
+        }
+        .mainHeaderText {
+            word-spacing: 10px;
+            h1 {
+                font-size: 4rem;
+            }
+        }
+    }
+
+    .quoteBox {
+        padding: 30px 0;
+        cite {
+            font-size: 18px;
+        }
+        p {
+            font-size: 11px;
+        }
+    }
+
+    .mediaContent {
+        padding-bottom: 200px;
+        .mediaContentImage {
+            margin-left: 100px;
+        }
+        .mediaContentText {
+            font-size: 12px;
+            margin-left: 200px;
+            a {
+                font-size: 11px;
+                padding-top: 50px;
+            }
+        }
+        iframe {
+            top: 80px;
+        }
+    }
+    
+    .surfboardShop {
+        .shopSectionTitle {
+            h2 {
+                font-size: 3rem;
+            }
+        }
+        .boardBox {
+            .boardBackground {                
+                width: 60%;
+                height: 70%;
+            }
+            img {
+                left: 15%;
+            }
+            .surfboardText {
+                h3 {
+                    font-size: 2rem;
+                }
+            }
+            .surfboardBuyAndPrice {
+                p {
+                    font-size: 1.5rem;
+                }
+            }
+        }
+        .arrowShop {
+            font-size: 30px;
+        }
+        > a {
+            margin: 50px auto;
+            padding-top: 50px;
+        }
+    }
+
+    .surfTraining {
+        .surfTrainingText {
+            h2 {
+                font-size: 3rem;
+            }
+            p {
+                margin-top: 30px;
+            }
+            a {
+                margin-top: 60px;
+            }
+        }
+    }
+
+    .surfTraining2 {
+        top: -200px;
+        .surfTrainingText2 {
+            h2 {
+                font-size: 3rem;
+            }
+            p {
+                margin-top: 30px;
+            }
+            a {
+                margin-top: 60px;
+            }
+        }
+    }
+
+    .newsletterSubscription {
+        margin: -200px auto 50px auto;
+        .verticalLine {
+            margin: 60px auto;
+        }
+        h2 {
+            font-size: 3rem;
+        }
+        p {
+            margin: 30px auto;
+        }
+        .subscribeForm {
+            .emailInput {
+                height: 50px;
+            }
+            .pushEmailBtn {
+                width: 50px;
+                height: 50px;
+                font-size: 20px;
+            }
+        }
+    }
+
+    .contacts {
+        margin-top: 10%;
+        .contactsText {
+            margin-top: 15%;
+            p:nth-of-type(1) {
+                margin-left: -30px;
+            }
+            h2 {
+                margin: 70px auto;
+                font-size: 22px;
+            }
+            p:nth-of-type(2) {
+                margin-left: -30px;
+                font-size: 13px;
+                padding-bottom: 10px;
+            }
+        }
+    }
+
+    .repeatNav {
+        margin: 50px auto;
+        .footerNav {
+            margin: 30px auto;
+            font-size: 13px;
+            .footerNavElem:hover {
+                background-color: #616161;
+                & a {
+                    color: #FFF;
+                }
+            }
+        }
+        .sociableIconsFooter {
+            .sociableIcon { 
+                font-size: 22px;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 1199px) {
+    header {
+        .rightPartOfHeader {
+            width: 650px;
+            top: 45%;
+            right: -310px;
+        }
+        .headerImage {
+            width: 80%;
+            margin-right: 40px;
+        }
+        .mainHeaderText {
+            word-spacing: 4px;
+            h1 {
+                font-size: 3.5rem;
+            }
+        }
+    }
+
+    .quoteBox {
+        padding: 60px 0;
+        cite {
+            font-size: 20px;
+        }
+        p {
+            font-size: 12px;
+            margin: 40px auto;
+        }
+    }
+
+    .mediaContent {
+        padding-bottom: 150px;
+        .mediaContentImage {
+            margin-left: 70px;
+        }
+        .mediaContentText {
+            margin-left: 150px;
+            a {
+                font-size: 12px;
+                padding-top: 30px;
+            }
+        }
+        iframe {
+            top: 50px;
+        }
+    }
+
+    .surfboardShop {
+        .shopSectionTitle {
+            h2 {
+                font-size: 2.5rem;
+            }
+        }
+        .boardBox {
+            .boardBackground {       
+                width: 60%;
+                height: 50%;
+            }
+            img {
+                left: 12%;
+            }
+            .surfboardText {
+                h3 {
+                    font-size: 1.7rem;
+                }
+            }
+            .surfboardBuyAndPrice {
+                p {
+                    font-size: 1.5rem;
+                }
+            }
+        }
+        .arrowShop {
+            font-size: 35px;
+        }
+        > a {
+            margin: 80px auto;
+            font-size: 13px;
+        }
+    }
+
+    .surfTraining {
+        .surfTrainingText {
+            h2 {
+                font-size: 2.2rem;
+            }
+            p {
+                margin-top: 20px;
+            }
+            a {
+                margin-top: 50px;
+                font-size: 13px;
+            }
+        }
+    }
+
+    .surfTraining2 {
+        top: -180px;
+        .surfTrainingText2 {
+            h2 {
+                font-size: 2.2rem;
+            }
+            p {
+                margin-top: 20px;
+            }
+            a {
+                margin-top: 50px;
+                font-size: 13px;
+            }
+        }
+    }
+
+    .newsletterSubscription {
+        margin: -150px auto 40px auto;
+        .verticalLine {
+            margin: 50px auto;
+        }
+        h2 {
+            font-size: 2.2rem;
+        }
+        p {
+            margin: 25px auto;
+        }
+        .subscribeForm {
+            .emailInput {
+                height: 35px;
+            }
+            .pushEmailBtn {
+                width: 35px;
+                height: 35px;
+                font-size: 18px;
+            }
+        }
+    }
+
+    .contacts {
+        .contactImageSunset {
+            width: 60%;
+        }
+        .contactsText {
+            margin-top: 10%;
+            p:nth-of-type(1) {
+                margin-left: 0;
+            }
+            h2 {
+                margin: 60px auto;
+                padding-left: 30px;
+                font-size: 2rem;
+            }
+            p:nth-of-type(2) {
+                margin-left: 0;
+                font-size: 12px;
+                padding-bottom: 10px;
+            }
+        }
+    }
+
+    .repeatNav {
+        margin: 40px auto;
+        .footerNav {
+            margin: 25px auto;
+            font-size: 12px;
+        }
+        .sociableIconsFooter {
+            .sociableIcon {
+                font-size: 25px;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    header {
+        .headerImage {
+            margin-right: 30px;
+            object-fit: cover;
+        }
+        .mainHeaderText {
+            p {
+                font-weight: bold;
+                color: #303030;
+            }
+        }
+    }
+
+    .mediaContent {
+        padding-bottom: 80px;
+        .mediaContentImage {
+            margin-left: 0;
+            width: 60%;
+        }
+        .mediaContentText {
+            margin-left: 100px;
+        }
+    }
+
+    .surfboardShop {
+        .boardBox {
+            width: 300%;
+            img {
+                left: 8%;
+                top: 50px;
+            }
+            .surfboardText {
+                h3 {
+                    font-size: 1.3rem;
+                }
+            }
+        }
+    }
+
+    .surfTraining {
+        .surfTrainingText {
+            h2 {
+                font-size: 2rem;
+            }
+            p {
+                margin-top: 10px;
+            }
+            a {
+                margin-top: 30px;
+                font-size: 12px;
+            }
+        }
+    }
+
+    .surfTraining2 {
+        top: -130px;
+        .surfTrainingText2 {
+            h2 {
+                font-size: 2rem;
+            }
+            p {
+                margin-top: 10px;
+            }
+            a {
+                margin-top: 30px;
+                font-size: 12px;
+            }
+        }
+    }
+
+    .newsletterSubscription {
+        margin: -130px auto 35px auto;
+        h2 {
+            font-size: 2rem;
+        }
+        .subscribeForm {
+            .emailInput {
+                height: 28px;
+            }
+            .pushEmailBtn {
+                width: 28px;
+                height: 28px;
+                font-size: 16px;
+            }
+        }
+    }
+
+    .contacts {
+        .contactsText {
+            h2 {
+                margin: 40px auto;
+                font-size: 24px;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    header {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        .flexibleNav {
+            display: flex;
+            background-color: rgba(29, 161, 242, .8);
+            z-index: 3;
+            .littleBoard {
+                display: none;
+            }
+            #hamburgerBtn {
+                margin: 10px auto;
+                border: 0;
+                width: 26px;
+                height: 26px;
+                position: relative;
+                border: 0;
+                border-radius: 500px;
+                transform: rotate(0deg);
+                transition: .5s ease-in-out;
+                cursor: pointer;
+                span{
+                    display: block;
+                    position: absolute;
+                    height: 5px;
+                    width: 100%;
+                    background: #FFF;
+                    border-radius: 9px;
+                    left: 0;
+                    transform: rotate(0deg);
+                    transition: .25s ease-in-out;
+                    &:nth-child(1) {
+                        top: 0px;
+                    }
+                    &:nth-child(2) {
+                        top: 10px;
+                    }
+                    &:nth-child(3) {
+                        top: 20px;
+                    }                    
+                }
+                &.open span:nth-child(1) {
+                    top: 10px;
+                    transform: rotate(135deg);
+                }                  
+                &.open span:nth-child(2) {
+                    opacity: 0;
+                    left: -30px;
+                }                  
+                &.open span:nth-child(3) {
+                    top: 10px;
+                    transform: rotate(-135deg);
+                }
+            }
+            .navStyle {
+                display: none;
+                width: 100%;
+                text-align: center;
+                .linkStyle {
+                    margin: 15px auto;
+                    color: #FFF;
+                    font-weight: bold;
+                    text-transform: uppercase;
+                    letter-spacing: 3px;
+                }
+            }
+        }
+        .rightPartOfHeader {
+            display: none;
+        }
+        .headerImage {
+            width: 100%;
+            height: 100vh;
+            margin: 0;
+        }
+        .mainHeaderText {
+            top: 40%;
+            p:nth-of-type(2) {
+                width: 100%;
+                margin: 150px auto 0 25px;
+                padding: 15px;
+                color: #1DA1F2;
+                letter-spacing: 2px;
+                background-color: rgba(250, 250, 250, .8);
+            }
+        }
+    }
+
+    .quoteBox {
+        padding: 60px 30px;
+        cite {
+            font-size: 18px;
+            text-align: center;
+        }
+    }
+
+    .mediaContent {
+        .mediaContentImage {
+            width: 100%;
+        }
+        .mediaContentText {
+            margin-left: 0;
+            margin-top: 20px;
+            width: 100%;
+        }
+        iframe {
+            position: relative;
+            width: 100%;
+            height: 200px;
+        }
+    }
+
+    .surfboardShop {
+        margin: 100px auto;
+        .boardBox {
+            width: 600%;
+            height: auto;
+            max-height: 350px;
+            padding: 0 40px;
+            .boardBackground {
+                width: 50%;
+            }
+            img {
+                left: 4%;
+                bottom: 0;
+            }
+            .surfboardText {
+                p {
+                    font-size: 12px;
+                }
+                h3 {
+                    font-size: 1.2rem;
+                }
+            }
+            .surfboardBuyAndPrice {
+                p {
+                    font-size: 1.1rem;
+                }
+            }
+        }
+        a {
+            display: none;
+        }
+    }
+
+    .surfTraining {
+        display: flex;
+        flex-direction: column;
+        margin-left: 0;
+        .surfTrainingText {
+            width: 100%;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        img {
+            position: initial;
+            width: 100%;
+        }
+    }
+
+    .surfTraining2 {
+        position: initial;
+        flex-direction: column;
+        .surfTrainingText2 {
+            width: 100%;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        img {
+            position: initial;
+            width: 100%;
+            margin-left: 0;
+        }
+    }
+
+    .newsletterSubscription {
+        margin: 20px auto;
+        width: 100%;
+        .subscribeForm {
+            .emailInput {
+                height: 40px;
+                width: calc(100% - 40px);
+            }
+            .pushEmailBtn {
+                width: 40px;
+                height: 40px;
+                font-size: 24px;
+            }
+        }
+    }
+
+    .contacts {
+        display: flex;
+        flex-direction: column;
+        .contactImageSunset {
+            width: 100%;
+        }
+        .contactsText {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            width: 100%;
+            p:nth-of-type(1),
+            p:nth-of-type(2) {
+                margin-left: 0;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 330px) {
+    header {
+        .mainHeaderText {
+            p:nth-of-type(2) {
+                margin: 40px auto 0 20px;
+            }
+        }
+    }
+}
