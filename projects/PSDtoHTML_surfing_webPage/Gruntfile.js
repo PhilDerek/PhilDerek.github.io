@@ -10,9 +10,13 @@ module.exports = function(grunt) {
                 sourceMap: true
             },
             dist: {
-                files: {
-                'css/style.css': 'sass/style.scss'
-                }
+                files: [{
+                    expand: true,
+                    cwd: 'sass/',
+                    src: ['**/*.scss'],
+                    dest: 'css/',
+                    ext: '.css'
+                }]
             }
         },
 
@@ -33,9 +37,13 @@ module.exports = function(grunt) {
                 mangle: false
             },
             my_target: {
-                files: {
-                    'js/scripts.min.js': ['js/scripts.js']
-                }
+                files: [{
+                    expand: true,
+                    cwd: 'js',
+                    src: ['*.js', '!*.min.js'],
+                    dest: 'js',
+                    ext: '.min.js'
+                }]
             }
         },
 
@@ -43,10 +51,6 @@ module.exports = function(grunt) {
             css: {
                 files: '**/*.scss',
                 tasks: ['sass']
-            },
-            uglify: {
-                files: 'js/scripts.js',
-                tasks: ['uglify']
             }
         }
     });
@@ -59,3 +63,9 @@ module.exports = function(grunt) {
     grunt.registerTask('default', ['sass', 'cssmin', 'uglify', 'watch']);
   
   };
+
+  
+// uglify: {
+//    files: ['**/*.js', '!**/*.min.js'],
+//    tasks: ['uglify']
+//}

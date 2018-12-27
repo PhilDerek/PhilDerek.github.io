@@ -1,0 +1,601 @@
+html, body, div, span, applet, object, iframe, 
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+    vertical-align: baseline;
+}
+
+@mixin robotoSansSerif {
+    font-family: 'PT Sans', sans-serif;
+}
+
+@mixin sociableIconStyle {
+    .sociableIcon {
+        color: #616161;
+    }
+    .icon1:hover {
+        color: rgb(224, 228, 3);
+    }
+    .icon2:hover {
+        color: #1DA1F2;
+    }
+    .icon3:hover {
+        color: #000;
+    }
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.lineBottomPoint {
+    width: 1px;
+    height: 1px;
+    position: absolute;
+}
+
+.sideSurfboards {
+    z-index: 3;
+    .fixedSurfboardBox {
+        position: fixed;
+        width: 5%;
+        overflow: hidden;
+    }
+    .leftSideFixed {
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        .leftSurfboard {
+            width: 100%;
+        }
+    }
+    .rightSideFixed {
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        .rightSurfboard {
+            width: 100%;
+        }
+    }
+    .fixedWave {
+        position: absolute;
+        top: -50%;
+        transform: translate(0, -100%);
+        z-index: -1;
+        &:nth-of-type(2),
+         :nth-of-type(4) {
+            animation-delay: 1.7s;
+        }
+    }
+    .waveAnimeClass {
+        animation: waveMove 3s linear infinite;
+    }
+}
+
+.header {
+    position: relative;
+    overflow: hidden;
+    padding-top: 56.25%;
+    width: 100%;
+    background-color: rgba(199, 199, 199, 0.3);
+    .backgroundVideo {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        z-index: -10;
+        margin: 0;
+        border: 0;
+    }
+    .mainText {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 0;
+        text-align: center;
+        color: #fff;
+        h1 {
+            font-weight: bold;
+            @include robotoSansSerif();
+        }
+        p {
+            width: 50%;
+            margin: 0 auto;
+        }
+    }
+}
+
+.horizontalSectionLine {
+    width: 70%;
+    height: 3px;
+    margin: 100px auto;
+    background-color: lightseagreen;
+}
+
+.training {
+    display: flex;
+    flex-direction: row;
+    .trainingText {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        .trainingHeadline {
+            @include robotoSansSerif();
+        }
+    }
+}
+
+.firstStep {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: url("/images/oceanWavesBackground.png"), rgba(255, 255, 255, .4);
+    background-blend-mode: color-dodge;
+    .firstStepHeadline {
+        @include robotoSansSerif();
+    }
+    .firstStepContent {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .surfboardTypes {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            position: relative;
+            width: 100%;
+            height: auto;
+            min-height: 80vh;
+            .surfboardContainer {
+                text-align: center;
+                .surfboardDescription {
+                    background-color: #000;
+                    color: #fff;
+                    @include robotoSansSerif();
+                    border-radius: 20px;
+                }
+            }
+        }
+    }
+}
+
+.footer {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    .footerText {
+        text-align: center;
+    }
+    .sociableContainer {
+        display: flex;
+        flex-direction: column;
+        .sociableIconsFooter {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+    }
+    .contactContainer {
+        display: flex;
+        flex-direction: column;
+        .contactIconsFooter {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            .phoneBox,
+            .emailBox {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                position: relative;
+                .phoneBtn,
+                .phoneBtn:focus,
+                .phoneBtn:active,
+                .emailBtn,
+                .emailBtn:focus,
+                .emailBtn:active {
+                    background: #fff;
+                    outline: none;
+                    border: 0;
+                    overflow: hidden;
+                    padding: 0;
+                }
+                .phoneBtn {
+                    color: #2DC100;
+                }
+                .phoneNumber,
+                .emailAdress {
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    left: 100%;
+                    display: none;
+                }
+                .emailBtn {
+                    color: #BA1821;
+                }
+            }
+        }
+    }
+}
+
+@keyframes waveMove {
+    from {left: -200%;}
+    to {left: 100%;}
+}
+
+@media only screen and (min-width: 1200px) {
+    .sideSurfboards {
+        .leftSideFixed {
+            padding: 30px 0;
+        }
+        .rightSideFixed {
+            padding: 30px 0;
+        }
+    }
+
+    .header {
+        height: 100vh;
+        .mainText {
+            h1 {
+            font-size: 4rem;
+            margin-bottom: 30px;
+            }
+            p {
+            font-size: 20px;
+            }
+        }
+    }
+
+    .training {    
+        margin: 0 90px;
+        .trainingText {
+            .trainingHeadline {
+                font-size: 3rem;
+                margin: 30px auto;
+            }
+        }
+    }
+
+    .firstStep {
+        .firstStepHeadline {
+            font-size: 3rem;
+            margin: 30px auto;
+        }
+        .firstStepContent {
+            .surfboardTypes {
+                margin: 50px 100px;
+                .surfboardContainer {
+                    width: 100%;
+                    .desk {
+                        &:hover {
+                            filter: drop-shadow(8px 8px 10px rgb(60, 70, 85));
+                            transform: scale(1.1);
+                            cursor: pointer;
+                            ~ .surfboardDescription {
+                                opacity: 1;
+                            }
+                        }
+                    }
+                    .surfboardDescription {
+                        padding: 25px;
+                        font-size: 20px; 
+                        opacity: 0;
+                        transition: opacity .2s linear;
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, 50%);
+                    }
+                }
+            }
+            .surfboardTypesMainText {
+                font-size: 2rem;
+                margin: 70px auto;
+                padding: 0 30%;
+                text-align: center;
+            }
+        }
+    }
+
+    .footer {
+        margin: 30px auto;
+        .sociableContainer,
+        .contactContainer {
+            .footerText {
+                font-size: 30px;
+                @include robotoSansSerif();
+                margin-bottom: 30px;
+            }
+        }
+        .sociableContainer {
+            .sociableIconsFooter {
+                .sociableIcon {
+                    margin: 0 30px;
+                    font-size: 30px;
+                }
+                @include sociableIconStyle();
+            }
+        }
+        .contactContainer {
+            .contactIconsFooter {
+                .phoneBtn,
+                .emailBtn {
+                    cursor: pointer;
+                    margin: 10px 30px;
+                    .contactIcon {
+                        font-size: 40px;
+                    }
+                }
+                .phoneNumber,
+                .emailAdress {
+                    width: 200px;
+                }
+            }
+        }
+    }   
+}
+
+@media only screen and (max-width: 1199px) {
+    .sideSurfboards {
+        .leftSideFixed {
+            padding: 30px 0;
+        }
+        .rightSideFixed {
+            padding: 30px 0;
+        }
+    }
+
+    .header {
+        height: auto;
+        .mainText {
+            h1 {
+            font-size: 3.5rem;
+            margin-bottom: 50px;
+            }
+            p {
+            font-size: 20px;
+            }
+        }
+    }
+
+    .training {    
+        margin: 0 90px;
+        .trainingText {
+            margin-right: 60px;
+            .trainingHeadline {
+                font-size: 3rem;
+                margin: 30px auto;
+            }
+            .trainingParagraph {
+                font-size: 1.5rem;
+            }
+        }
+        .trainingImg {
+            transform: scale(1.2) translateX(-30px);
+        }
+    }
+
+    .firstStep {
+        padding: 0 5%;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        .firstStepHeadline {
+            font-size: 3rem;
+            margin: 30px auto;
+        }
+        .firstStepContent {
+            .surfboardTypes {
+                margin: 50px 100px;
+                flex-wrap: wrap;
+                .surfboardContainer {
+                    width: 50%;
+                    padding: 20px;
+                    .surfboardDescription {
+                        padding: 25px;
+                        font-size: 20px;
+                    }
+                }
+            }
+            .surfboardTypesMainText {
+                font-size: 2rem;
+                margin: 70px auto;
+                padding: 0 30%;
+                text-align: center;
+            }
+        }
+    }
+
+    .footer {
+        margin: 30px auto;
+        .sociableContainer,
+        .contactContainer {
+            .footerText {
+                font-size: 30px;
+                @include robotoSansSerif();
+                margin-bottom: 30px;
+            }
+        }
+        .sociableContainer {
+            .sociableIconsFooter {
+                .sociableIcon {
+                    margin: 0 30px;
+                    font-size: 30px;
+                }
+                .icon1 {
+                    color: rgb(224, 228, 3);
+                }
+                .icon2 {
+                    color: #1DA1F2;
+                }
+                .icon3 {
+                    color: #000;
+                }
+            }
+        }
+        .contactContainer {
+            .contactIconsFooter {
+                .phoneBtn,
+                .emailBtn {
+                    margin: 10px 30px;
+                    .contactIcon {
+                        font-size: 35px;
+                    }
+                }
+                .phoneNumber,
+                .emailAdress {
+                    width: 200px;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    .sideSurfboards {
+        .leftSideFixed {
+            padding: 30px 0;
+        }
+        .rightSideFixed {
+            padding: 30px 0;
+        }
+    }
+
+    .header {
+        height: auto;
+        .mainText {
+            h1 {
+            font-size: 3.5rem;
+            margin-bottom: 50px;
+            }
+            p {
+            font-size: 20px;
+            }
+        }
+    }
+
+    .training {    
+        margin: 0 50px;
+        .trainingText {
+            margin-right: 30px;
+            .trainingHeadline {
+                font-size: 2.5rem;
+                margin: 10px auto;
+            }
+            .trainingParagraph {
+                font-size: 1.2rem;
+            }
+        }
+        .trainingImg {
+            transform: scale(1) translateX(0);
+        }
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .sideSurfboards {
+        display: none;
+    }
+
+    .header {
+        background: url("/images/secondPageMobileImg.jpg") fixed no-repeat center;
+        background-size: cover;
+        min-height: 500px;
+        padding-top: 0;
+        .backgroundVideo {
+            display: none;
+        }
+        .mainText {
+            color: rgb(151, 150, 93);
+            h1 {
+                font-size: 2.5rem;
+                margin-bottom: 50px;
+            }
+            p {
+                font-size: 18px;
+                width: 70%;
+            }
+        }
+    }
+
+    .training {    
+        margin: 0 30px;
+        flex-direction: column;
+        .trainingText {
+            margin: 0 auto 30px;
+            .trainingHeadline {
+                font-size: 2rem;
+                margin: 10px auto;
+            }
+            .trainingParagraph {
+                font-size: 1rem;
+            }
+        }
+        .trainingImg {
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    .firstStep {
+        .firstStepContent {
+            .surfboardTypes {
+                .surfboardContainer {
+                    width: 100%;
+                    .surfboardDescription {
+                        padding: 15px;
+                        font-size: 1rem;
+                    }
+                }
+            }
+            .surfboardTypesMainText {
+                font-size: 1.4rem;
+                padding: 0 10%;
+            }
+        }
+    }
+
+    .footer {
+        flex-direction: column;
+        .sociableContainer,
+        .contactContainer {
+            .footerText {
+                font-size: 23px;
+                margin-bottom: 20px;
+            }
+        }
+        .sociableContainer {
+            margin-bottom: 25px;
+        }
+        .contactContainer {
+            .contactIconsFooter {
+                margin-left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+    }
+}
