@@ -110,7 +110,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: url("/images/oceanWavesBackground.png"), rgba(255, 255, 255, 0.4);
+  background: url("/projects/PSDtoHTML_surfing_webPage/images/oceanWavesBackground.png"), rgba(255, 255, 255, 0.4);
   background-blend-mode: color-dodge; }
   .firstStep .firstStepHeadline {
     font-family: 'PT Sans', sans-serif; }
@@ -372,7 +372,7 @@ body {
   .sideSurfboards {
     display: none; }
   .header {
-    background: url("/images/secondPageMobileImg.jpg") fixed no-repeat center;
+    background: url("/projects/PSDtoHTML_surfing_webPage/images/secondPageMobileImg.jpg") fixed no-repeat center;
     background-size: cover;
     min-height: 500px;
     padding-top: 0; }
