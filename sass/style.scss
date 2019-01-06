@@ -386,6 +386,11 @@ footer {
     .aboutMe {
         @include flexCent();
         align-items: center;
+        .portfolioPhoto {
+            width: 200px;
+            height: auto;
+            min-width: 200px;
+        }
         .aboutMeText {
             padding: 30px;
             h2 {
@@ -531,9 +536,10 @@ footer {
         @include flexCent();
         align-items: center;
         flex-direction: column;
-        img {
+        .portfolioPhoto {
             width: 170px;
             height: auto;
+            min-width: 170px;
         }
         .aboutMeText {
             float: right;
@@ -732,9 +738,10 @@ footer {
     .aboutMe {
         @include fullWidth();
         margin-top: 50px;
-        img {
+        .portfolioPhoto {
             width: 100px;
             height: auto;
+            min-width: 100px;
         }
         .aboutMeText {
             padding: 15px;
