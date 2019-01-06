@@ -147,7 +147,7 @@ $(document).ready(function() {
                 $(".flexibleNav").css({position: "absolute", backgroundColor: "transparent", paddingRight: "30px"});
                 $(".linkStyle").css({color: "#FFF"});
             }
-        } else {
+        } else if (window.matchMedia("(max-width: 600px)").matches) {
             if (pageYOffset > navHeight) {
                 $(".flexibleNav").css({position: "fixed"});
             } else {
