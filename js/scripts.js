@@ -1,12 +1,25 @@
 $(function() {
     // hamburger menu animation
-    if ($(window).width() < 600) {
+    if ($(window).width() < 601) {
         $("#hamburgerBtn").click(function() {
             $(this).toggleClass("open").addClass("ml-auto");
             $(".menuTop").slideToggle("slow");
             $(this).parent("nav").css("flex-direction", "column");
         })
     }
+
+    //fixed nav
+    $(window).scroll(function () {
+        var navHeight = $(".navFixed").height();
+        var pageYOffset = window.pageYOffset;
+        if (window.matchMedia("(max-width: 600px)").matches) {
+            if (pageYOffset > navHeight) {
+                $(".navFixed").css({position: "fixed"});
+            } else {
+                $(".navFixed").css({position: "absolute"});
+            }
+        }
+    })
 
     // to top button animations
    $(window).scroll(function() {
@@ -62,16 +75,4 @@ $(function() {
     $(".phoneIcon").click(function() {
         $(".phoneBox > p").slideToggle();
     })
-/*
-    //parallax moving version effect
-    $(window).scroll(function() {
-        var scrollTopValue = $(window).scrollTop();
-        var windHeight = $(window).height();
-        $(".parallaxEffect").css("background-position", "center " + (windHeight * 0.5 + scrollTopValue * -0.5) + "px");
-    })
-*/
-   //army of dots
-   /*for (var i = 0; i < Math.floor(Math.random() * 5) + 3; i++) {
-        $( "<div></div>" ).appendTo( "header" ).addClass("particleDot");
-    }    */
 })

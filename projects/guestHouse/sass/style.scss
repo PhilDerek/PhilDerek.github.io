@@ -633,6 +633,7 @@ header {
             .myNavClass {
                 font-size: 20px;
                 @include opacityBackg();
+                z-index: 3;
                 .flexLogo {
                     display: flex;
                     justify-content: center;
@@ -716,15 +717,14 @@ header {
         }
         .modalBoxes {
             padding-top: 0;
-            .closeIcon {
-                right: 30px;
-                top: 30px;
-            }
             .boxContent {
-                margin-top: 50%;
-                width: 85%;
-                img {
-                    height: 80vh;
+                .closeIcon {
+                    right: 30px;
+                    top: 10px;
+                }
+                .arrow {
+                    font-size: 1rem;
+                    padding: 10px;
                 }
             }
         }
@@ -812,8 +812,8 @@ header {
                 position: absolute;
                 top: 0;
                 left: 0;
-                width: 100% !important;
-                height: 100% !important;
+                width: 100%;
+                height: 100%;
             } 
         }
         .backToTop {

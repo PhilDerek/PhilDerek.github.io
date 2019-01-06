@@ -386,10 +386,6 @@ footer {
     .aboutMe {
         @include flexCent();
         align-items: center;
-        img {
-            width: 200px;
-            height: 200px;
-        }
         .aboutMeText {
             padding: 30px;
             h2 {
@@ -727,6 +723,7 @@ footer {
                     display: none;
                     a {
                         text-align: center;
+                        color: $mainColor;
                     }
                 }
             }
@@ -737,7 +734,7 @@ footer {
         margin-top: 50px;
         img {
             width: 100px;
-            height: 100px;
+            height: auto;
         }
         .aboutMeText {
             padding: 15px;
@@ -775,7 +772,7 @@ footer {
             }
             .iconChange2 {
                 line-height: 45px;
-                width: 45px;
+                width: 42px;
             }        
         }
     }
