@@ -9,24 +9,39 @@
         <meta name="author" content="PhilDerek">
         <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-        <link rel="stylesheet" type="text/css" href="css/secondaryPageStyle.css">
+        <link rel="stylesheet" type="text/css" href="css/secondaryPageStyle.min.css">
     </head>
     <body>
         <div id="dotTest2" class="lineBottomPoint"></div>
         <div id="line"></div>
         <div class="sideSurfboards">
             <div class="leftSideFixed fixedSurfboardBox">
-                <img class="leftSurfboard backboard" src="/projects/PSDtoHTML_surfing_webPage/images/secondPageSurfboard1.png" alt="leftside surfboard from top view">
-                <img class="fixedWave" src="/projects/PSDtoHTML_surfing_webPage/images/waves.png" alt="little blue wave behind surfboard">
-                <img class="fixedWave" src="/projects/PSDtoHTML_surfing_webPage/images/waves.png" alt="little blue wave behind surfboard">
+                <img class="leftSurfboard backboard" src="minifiedImages/secondPageSurfboard1.png" alt="leftside surfboard from top view">
+                <img class="fixedWave" src="minifiedImages/waves.png" alt="little blue wave behind surfboard">
+                <img class="fixedWave" src="minifiedImages/waves.png" alt="little blue wave behind surfboard">
             </div>
             <div class="rightSideFixed fixedSurfboardBox">
-                <img class="rightSurfboard backboard" src="/projects/PSDtoHTML_surfing_webPage/images/secondPageSurfboard2.png" alt="rightside surfboard from top view">
-                <img class="fixedWave" src="/projects/PSDtoHTML_surfing_webPage/images/waves.png" alt="little blue wave behind surfboard">
-                <img class="fixedWave" src="/projects/PSDtoHTML_surfing_webPage/images/waves.png" alt="little blue wave behind surfboard">
+                <img class="rightSurfboard backboard" src="minifiedImages/secondPageSurfboard2.png" alt="rightside surfboard from top view">
+                <img class="fixedWave" src="minifiedImages/waves.png" alt="little blue wave behind surfboard">
+                <img class="fixedWave" src="minifiedImages/waves.png" alt="little blue wave behind surfboard">
             </div>
         </div>
         <header class="header">
+            <nav class="fixedNav">
+                <a class="mainPageLink" href="index.html">
+                    <i class="fas fa-angle-double-left backIcon"></i>main page
+                </a>
+                <div id="hamburgerBtn" class="hamburgerNavBtn" data-target="#mobileNav">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div id="mobileNav" class="rightNav">
+                    <a class="rightNavLink" href="#trainingScroll">Training</a>
+                    <a class="rightNavLink" href="#firstStepScroll">Beginning</a>
+                    <a class="rightNavLink" href="#footerScroll">Contact</a>
+                </div>
+            </nav>
             <iframe class="backgroundVideo" src="//player.vimeo.com/video/180177718?autoplay=1&controls=0&loop=1&autopause=0&muted=1&background=1" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
             <div class="mainText">
                 <h1>Feeling. <br>Inspiration. <br>Love to waves.</h1>
@@ -34,54 +49,59 @@
             </div>
         </header>
         <div class="horizontalSectionLine"></div>
-        <section class="training">
+        <section id="trainingScroll" class="training">
             <div class="trainingText">
                 <h2 class="trainingHeadline">Hard training</h2>
                 <p class="trainingParagraph">You need a lot of passion and patience to complete training at the high level. You need Your heart and strength, without them waves will win. Don't let them do it.</p>
             </div>
-            <img class="trainingImg" src="/projects/PSDtoHTML_surfing_webPage/images/surfTrainingSecondPage.jpg" alt="hard training on surfboard">
+            <img class="trainingImg" src="minifiedImages/surfTrainingSecondPage.jpg" alt="hard training on surfboard">
         </section>
         <div class="horizontalSectionLine"></div>
-        <section class="firstStep">
+        <section id="firstStepScroll" class="firstStep">
             <h2 class="firstStepHeadline">First step...</h2>
             <div class="firstStepContent">
                 <div class="surfboardTypes">
                     <div class="surfboardContainer">
-                        <img class="surfdesk1 desk" src="/projects/PSDtoHTML_surfing_webPage/images/fishSurfboard.png" alt="fish surfboard type">
+                        <h3 class="deskTypeName">Fish surfboard</h3>
+                        <img class="surfdesk1 desk" src="minifiedImages/fishSurfboard.png" alt="fish surfboard type">
                         <p class="surfboardDescription">The fish surfboard differs from a shortboard in that it has a wider, rounder nose, a wider mid-section width and a 'swallow tail'. They are generally between 5'2" and 6'4" long and between 18" and 22" wide. They are designed to improve wave catching capability while maintaining speed and manoeuvring performance, ideal for small to medium sized waves.</p>
                         
                     </div>
                     <div class="surfboardContainer">
-                        <img class="surfdesk2 desk" src="/projects/PSDtoHTML_surfing_webPage/images/shortboardSurfboard.png" alt="shortboard surfboard type">
+                        <h3 class="deskTypeName">Short surfboard</h3>
+                        <img class="surfdesk2 desk" src="minifiedImages/shortboardSurfboard.png" alt="shortboard surfboard type">
                         <p class="surfboardDescription">The most common board used for shredding and contest-style surfing. It sacrifices paddling ease for the sake of speed, power and control. They are generally around 5'6" to 6'4" long and between 16" and 19" wide, generally with a rounded square tail. A surfboard designed for the advanced surfer.</p>
                         
                     </div>
                     <div class="surfboardContainer">
-                        <img class="surfdesk3 desk" src="/projects/PSDtoHTML_surfing_webPage/images/funboardSurfboard.png" alt="funboard surfboard type">
+                        <h3 class="deskTypeName">Funboard</h3>
+                        <img class="surfdesk3 desk" src="minifiedImages/funboardSurfboard.png" alt="funboard surfboard type">
                         <p class="surfboardDescription">Funboards range in length between 6'6" and 8'0" and 20" to 22" wide. The funboard combines the paddling power of a longboard with the turning ability of a shortboard. These boards perform well in all conditions and are ideal for less experienced surfers.</p>
                        
                     </div>
                     <div class="surfboardContainer">
-                        <img class="surfdesk4 desk" src="/projects/PSDtoHTML_surfing_webPage/images/gunSurfboard.png" alt="gun surfboard type">
+                        <h3 class="deskTypeName">Gun surfboard</h3>
+                        <img class="surfdesk4 desk" src="minifiedImages/gunSurfboard.png" alt="gun surfboard type">
                         <p class="surfboardDescription">The gun is long, narrow and pointy at the nose and tail (pin tail) for maximum rail contact. They range from 6' to 10' plus. They are ideal for big wave surfing, or for powerful, steep waves. Because of their shape they are easier to paddle out further to the big waves and easier to control on the steeper waves. </p>
                         
                     </div>
                     <div class="surfboardContainer">
-                        <img class="surfdesk5 desk" src="/projects/PSDtoHTML_surfing_webPage/images/malibuSurfboard.png" alt="malibu surfboard type">
+                        <h3 class="deskTypeName">Malibu surfboard</h3>
+                        <img class="surfdesk5 desk" src="minifiedImages/malibuSurfboard.png" alt="malibu surfboard type">
                         <p class="surfboardDescription">The malibu board is similar to the longboard in its shape and riding characteristics, but it's slightly shorter length and slimmer width and tail allow for sharper turns. You may also hear the malibu board referred to as a 'mini-mal', which is simply as it sounds, a slightly shorter malibu. They either have one large fin or three smaller fins.</p>
                         
                     </div>
                     <div class="surfboardContainer">
-                        <img class="surfdesk6 desk" src="/projects/PSDtoHTML_surfing_webPage/images/longboardSurfboard.png" alt="longboard surfboard type">
-                        <p class="surfboardDescription">Otherwise known as a 'cruizer' or 'log'. They are usually over 8' or 9' long, with a rounded nose. Longboards are much more stable in the water, they are easier to paddle and great for catching waves, making them ideal for learning on. However due to their size, they can be harder to get through the white water and oncoming sets to get 'out the back'.</p>
-                        
+                        <h3 class="deskTypeName">Longboard</h3>
+                        <img class="surfdesk6 desk" src="minifiedImages/longboardSurfboard.png" alt="longboard surfboard type">
+                        <p class="surfboardDescription">Otherwise known as a 'cruizer' or 'log'. They are usually over 8' or 9' long, with a rounded nose. Longboards are much more stable in the water, they are easier to paddle and great for catching waves, making them ideal for learning on. However due to their size, they can be harder to get through the white water and oncoming sets to get 'out the back'.</p>   
                     </div>
                 </div>
                 <p class="surfboardTypesMainText">With our surfboards You have huge boost to Your training. Imagine how fast You can learn surf. Choose one from our shop.</p>
             </div>
         </section>
         <div class="horizontalSectionLine"></div>
-        <footer class="footer">
+        <footer id="footerScroll" class="footer">
             <div class="sociableContainer">
                 <p class="footerText">Visit us:</p>
                 <div class="sociableIconsFooter">
@@ -107,6 +127,6 @@
         </footer>
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <script src="js/secondaryPageScripts.js" async defer></script>
+        <script src="js/secondaryPageScripts.min.js" async defer></script>
     </body>
 </html>

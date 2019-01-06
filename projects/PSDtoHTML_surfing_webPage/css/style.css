@@ -12,10 +12,16 @@ body {
 header {
   position: relative;
   height: 100vh; }
-  header .navStyle {
-    font-family: "Open Sans", sans-serif; }
-    header .navStyle .linkStyle {
-      color: #FFF; }
+  header .flexibleNav {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    z-index: 6;
+    padding-right: 30px; }
+    header .flexibleNav .navStyle {
+      font-family: "Open Sans", sans-serif; }
+      header .flexibleNav .navStyle .linkStyle {
+        color: #FFF; }
   header .rightPartOfHeader {
     color: grey;
     display: flex;
@@ -45,6 +51,7 @@ header {
   header .mainHeaderText {
     position: absolute;
     top: 50%;
+    transform: translateY(-50%);
     left: 3%; }
     header .mainHeaderText p {
       font-family: "Open Sans", sans-serif; }
@@ -52,7 +59,8 @@ header {
       color: #0362ce; }
     header .mainHeaderText p:nth-of-type(2) {
       width: 35%;
-      color: gray; }
+      color: grey;
+      font-weight: bold; }
     header .mainHeaderText h1 {
       font-weight: bold; }
 
@@ -169,14 +177,6 @@ header {
     left: 20px; }
   .surfboardShop i:nth-of-type(2) {
     right: 20px; }
-  .surfboardShop > a {
-    display: inline-block;
-    color: #000;
-    padding-bottom: 5px;
-    border-bottom: #5da8ef 2px solid;
-    letter-spacing: 2px; }
-    .surfboardShop > a:hover {
-      text-decoration: none; }
 
 .surfTraining {
   display: block;
@@ -257,10 +257,39 @@ header {
     .newsletterSubscription .subscribeForm .emailInput {
       width: 87%;
       float: left; }
+      .newsletterSubscription .subscribeForm .emailInput:invalid {
+        box-shadow: none; }
     .newsletterSubscription .subscribeForm .pushEmailBtn {
       background-color: #5da8ef;
       color: #FFF;
-      border: none; }
+      border: none;
+      cursor: pointer;
+      text-align: center; }
+  .newsletterSubscription .submitSuccessScreen {
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(179, 170, 170, 0.8); }
+    .newsletterSubscription .submitSuccessScreen .successInfoBox {
+      text-align: center;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #FFF;
+      border: #069bd6 solid;
+      border-radius: 15px;
+      z-index: 5;
+      width: 80vw; }
+      .newsletterSubscription .submitSuccessScreen .successInfoBox .closeScreen {
+        display: block;
+        margin: 10px 20px 10px auto;
+        cursor: pointer;
+        font-size: 22px;
+        outline: none; }
 
 .contacts {
   width: 100%; }
@@ -280,7 +309,6 @@ header {
       font-weight: bold; }
     .contacts .contactsText p:nth-of-type(2) {
       color: #5da8ef;
-      cursor: pointer;
       font-family: "Open Sans", sans-serif;
       text-transform: uppercase;
       word-spacing: 3px;
@@ -312,6 +340,8 @@ header {
     color: #000; }
 
 @media only screen and (min-width: 1200px) {
+  header .flexibleNav .navStyle .linkStyle:hover {
+    background-color: #9cc4cf; }
   header .rightPartOfHeader {
     width: 550px;
     top: 45%;
@@ -322,6 +352,8 @@ header {
     word-spacing: 10px; }
     header .mainHeaderText h1 {
       font-size: 4rem; }
+    header .mainHeaderText p:nth-of-type(2) {
+      font-size: 20px; }
   .quoteBox {
     padding: 30px 0; }
     .quoteBox cite {
@@ -340,22 +372,22 @@ header {
         padding-top: 50px; }
     .mediaContent iframe {
       top: 80px; }
-  .surfboardShop .shopSectionTitle h2 {
-    font-size: 3rem; }
-  .surfboardShop .boardBox .boardBackground {
-    width: 60%;
-    height: 70%; }
-  .surfboardShop .boardBox img {
-    left: 15%; }
-  .surfboardShop .boardBox .surfboardText h3 {
-    font-size: 2rem; }
-  .surfboardShop .boardBox .surfboardBuyAndPrice p {
-    font-size: 1.5rem; }
-  .surfboardShop .arrowShop {
-    font-size: 30px; }
-  .surfboardShop > a {
-    margin: 50px auto;
-    padding-top: 50px; }
+  .surfboardShop {
+    padding-bottom: 80px; }
+    .surfboardShop .shopSectionTitle h2 {
+      font-size: 3rem; }
+    .surfboardShop .boardBox .boardBackground {
+      width: 60%;
+      height: 70%; }
+    .surfboardShop .boardBox .surfboardText h3 {
+      font-size: 2rem; }
+    .surfboardShop .boardBox .surfboardBuyAndPrice p {
+      font-size: 1.5rem; }
+    .surfboardShop .arrowShop {
+      font-size: 30px; }
+    .surfboardShop > a {
+      margin: 50px auto;
+      padding-top: 50px; }
   .surfTraining .surfTrainingText h2 {
     font-size: 3rem; }
   .surfTraining .surfTrainingText p {
@@ -439,22 +471,22 @@ header {
         padding-top: 30px; }
     .mediaContent iframe {
       top: 50px; }
-  .surfboardShop .shopSectionTitle h2 {
-    font-size: 2.5rem; }
-  .surfboardShop .boardBox .boardBackground {
-    width: 60%;
-    height: 50%; }
-  .surfboardShop .boardBox img {
-    left: 12%; }
-  .surfboardShop .boardBox .surfboardText h3 {
-    font-size: 1.7rem; }
-  .surfboardShop .boardBox .surfboardBuyAndPrice p {
-    font-size: 1.5rem; }
-  .surfboardShop .arrowShop {
-    font-size: 35px; }
-  .surfboardShop > a {
-    margin: 80px auto;
-    font-size: 13px; }
+  .surfboardShop {
+    padding-bottom: 80px; }
+    .surfboardShop .shopSectionTitle h2 {
+      font-size: 2.5rem; }
+    .surfboardShop .boardBox .boardBackground {
+      width: 60%;
+      height: 50%; }
+    .surfboardShop .boardBox .surfboardText h3 {
+      font-size: 1.7rem; }
+    .surfboardShop .boardBox .surfboardBuyAndPrice p {
+      font-size: 1.5rem; }
+    .surfboardShop .arrowShop {
+      font-size: 35px; }
+    .surfboardShop > a {
+      margin: 80px auto;
+      font-size: 13px; }
   .surfTraining .surfTrainingText h2 {
     font-size: 2.2rem; }
   .surfTraining .surfTrainingText p {
@@ -524,7 +556,6 @@ header {
   .surfboardShop .boardBox {
     width: 300%; }
     .surfboardShop .boardBox img {
-      left: 8%;
       top: 50px; }
     .surfboardShop .boardBox .surfboardText h3 {
       font-size: 1.3rem; }
@@ -575,7 +606,6 @@ header {
         width: 26px;
         height: 26px;
         position: relative;
-        border: 0;
         border-radius: 500px;
         transform: rotate(0deg);
         transition: .5s ease-in-out;
@@ -621,15 +651,13 @@ header {
       width: 100%;
       height: 100vh;
       margin: 0; }
-    header .mainHeaderText {
-      top: 40%; }
-      header .mainHeaderText p:nth-of-type(2) {
-        width: 100%;
-        margin: 150px auto 0 25px;
-        padding: 15px;
-        color: #1DA1F2;
-        letter-spacing: 2px;
-        background-color: rgba(250, 250, 250, 0.8); }
+    header .mainHeaderText p:nth-of-type(2) {
+      width: 100%;
+      margin: 150px auto 0 25px;
+      padding: 15px;
+      color: #1DA1F2;
+      letter-spacing: 2px;
+      background-color: rgba(250, 250, 250, 0.8); }
   .quoteBox {
     padding: 60px 30px; }
     .quoteBox cite {
@@ -646,7 +674,8 @@ header {
     width: 100%;
     height: 200px; }
   .surfboardShop {
-    margin: 100px auto; }
+    margin: 90px auto;
+    padding: 0; }
     .surfboardShop .boardBox {
       width: 600%;
       height: auto;
@@ -655,7 +684,6 @@ header {
       .surfboardShop .boardBox .boardBackground {
         width: 50%; }
       .surfboardShop .boardBox img {
-        left: 4%;
         bottom: 0; }
       .surfboardShop .boardBox .surfboardText p {
         font-size: 12px; }

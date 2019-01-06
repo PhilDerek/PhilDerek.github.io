@@ -77,7 +77,7 @@ $(document).ready(function() {
         
     })
 
-    //surfboardPositioning
+    //surfboard positioning
     var howManyImages = document.querySelectorAll(".boardBox img");
     
     for (var i = 1; i <= howManyImages.length; i++) {
@@ -108,4 +108,51 @@ $(document).ready(function() {
         }, 1500);
     }
     
+    //email validation
+    $(".pushEmailBtn").click(function (event) {
+        event.preventDefault();
+        var emailRegEx = /^[0-9a-z_.-]+@[0-9a-z.-]+\.[a-z]{2,3}$/i
+        var emailInput = $(".emailInput").val();
+        var formChildren = document.getElementById("form").childElementCount;
+        if (emailRegEx.test(emailInput)) {
+            $(".submitSuccessScreen").toggle();
+            $(".emailInput").val("");
+            
+            if (formChildren > 2) {
+                $("span").remove();
+            }
+        } else {
+            $(".emailInput").css({boxShadow: "0px 0px 5px 0px red"});
+
+            if (formChildren < 3) {
+                $(this).parent().append("<span>This email is invalid</span>").css({color: "red"});
+            }
+        }
+    })
+
+    $(".closeScreen").click(function() {
+        $(".submitSuccessScreen").css({display: "none"});
+        $(".emailInput").css({boxShadow: "none"});
+    })
+
+    //Fixed nav
+    $(window).scroll(function () {
+        var navHeight = $(".flexibleNav").height();
+        var pageYOffset = window.pageYOffset;
+        if (window.matchMedia("(min-width: 601px)").matches) {
+            if (pageYOffset > navHeight) {
+                $(".flexibleNav").css({position: "fixed", backgroundColor: "rgba(156, 196, 207, .8)", paddingRight: "12%"});
+                $(".linkStyle").css({color: "#000"});
+            } else {
+                $(".flexibleNav").css({position: "absolute", backgroundColor: "transparent", paddingRight: "30px"});
+                $(".linkStyle").css({color: "#FFF"});
+            }
+        } else {
+            if (pageYOffset > navHeight) {
+                $(".flexibleNav").css({position: "fixed"});
+            } else {
+                $(".flexibleNav").css({position: "absolute"});
+            }
+        }
+    })
 })

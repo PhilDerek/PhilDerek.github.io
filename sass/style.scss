@@ -155,7 +155,7 @@ header {
     height: 100vh;
     @include flexCent();
     align-items: center;
-    background-image: linear-gradient(to bottom right, aquamarine, purple);
+    background-image: linear-gradient(to top left, rgb(34, 63, 128), $textSecondColor);
     .aboutMe {
         .aboutMeText {
             color: $textMainColor;
@@ -396,6 +396,9 @@ footer {
                 font-size: 3rem;
                 margin-bottom: 20px;
             }
+            p {
+                font-size: 20px;
+            }
         }
     }
     .technologies {
@@ -531,9 +534,10 @@ footer {
     .aboutMe {
         @include flexCent();
         align-items: center;
+        flex-direction: column;
         img {
             width: 170px;
-            height: 170px;
+            height: auto;
         }
         .aboutMeText {
             float: right;
@@ -542,6 +546,7 @@ footer {
                 font-size: 2rem;
                 margin-bottom: 10px;
             }
+            font-size: 18px;
         }
     }
     .technologies {

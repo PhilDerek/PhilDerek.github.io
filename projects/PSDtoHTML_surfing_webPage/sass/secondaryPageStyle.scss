@@ -40,6 +40,7 @@ time, mark, audio, video {
 
 * {
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -98,6 +99,36 @@ body {
     padding-top: 56.25%;
     width: 100%;
     background-color: rgba(199, 199, 199, 0.3);
+    .fixedNav {
+        display: flex;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 3;
+        overflow: hidden;
+        width: 100%;
+        background-color: rgb(63, 155, 212);
+        @include robotoSansSerif();
+        font-weight: bold;
+        .mainPageLink {
+            display: flex;
+            align-items: center;
+            color: #fff;
+            text-decoration: none;
+        }
+        .hamburgerNavBtn {
+            display: none;
+        }
+        .rightNav {
+            margin-left: auto;
+            display: flex;
+            align-items: center;
+            .rightNavLink {
+                text-decoration: none;
+                color: #fff;
+            }
+        }
+    }
     .backgroundVideo {
         position: absolute;
         top: 0;
@@ -151,7 +182,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: url("/projects/PSDtoHTML_surfing_webPage/images/oceanWavesBackground.png"), rgba(255, 255, 255, .4);
+    background: url("minifiedImages/oceanWavesBackground.png"), rgba(255, 255, 255, .4);
     background-blend-mode: color-dodge;
     .firstStepHeadline {
         @include robotoSansSerif();
@@ -170,6 +201,10 @@ body {
             min-height: 80vh;
             .surfboardContainer {
                 text-align: center;
+                .deskTypeName {
+                    @include robotoSansSerif();
+                    font-weight: bold;
+                }
                 .surfboardDescription {
                     background-color: #000;
                     color: #fff;
@@ -259,6 +294,38 @@ body {
 
     .header {
         height: 100vh;
+        .fixedNav {
+            padding: 0 100px;
+            .mainPageLink {
+                padding: 0 15px;
+                font-size: 20px;
+                .backIcon {
+                    margin-right: 10px;
+                    position: relative;
+                    left: 0;
+                    transition: left .4s ease;
+                }
+                &:hover {
+                    background-color: #fff;
+                    cursor: pointer;
+                    color: #000;
+                    & .backIcon {
+                        left: -10px;
+                    }
+                }
+            }
+            .rightNav {
+                .rightNavLink {
+                    padding: 10px 30px;
+                    font-size: 20px;
+                    &:hover {
+                        background-color: #fff;
+                        cursor: pointer;
+                        color: #000;
+                    }
+                }
+            }
+        }
         .mainText {
             h1 {
             font-size: 4rem;
@@ -286,10 +353,14 @@ body {
             margin: 30px auto;
         }
         .firstStepContent {
+            margin: 50px 100px;
             .surfboardTypes {
-                margin: 50px 100px;
                 .surfboardContainer {
                     width: 100%;
+                    .deskTypeName {
+                        font-size: 24px;
+                        margin-bottom: 30px;
+                    }
                     .desk {
                         &:hover {
                             filter: drop-shadow(8px 8px 10px rgb(60, 70, 85));
@@ -371,6 +442,22 @@ body {
 
     .header {
         height: auto;
+        .fixedNav {
+            padding: 0 100px;
+            .mainPageLink {
+                padding: 0 10px;
+                font-size: 18px;
+                .backIcon {
+                    margin-right: 8px;
+                }
+            }
+            .rightNav {
+                .rightNavLink {
+                    padding: 10px 20px;
+                    font-size: 18px;
+                }
+            }
+        }
         .mainText {
             h1 {
             font-size: 3.5rem;
@@ -415,6 +502,10 @@ body {
                 .surfboardContainer {
                     width: 50%;
                     padding: 20px;
+                    .deskTypeName {
+                        font-size: 21px;
+                        margin-bottom: 20px;
+                    }
                     .surfboardDescription {
                         padding: 25px;
                         font-size: 20px;
@@ -522,15 +613,75 @@ body {
     }
 
     .header {
-        background: url("/projects/PSDtoHTML_surfing_webPage/images/secondPageMobileImg.jpg") fixed no-repeat center;
+        background: url("minifiedImages/secondPageMobileImg.jpg") no-repeat center;
         background-size: cover;
         min-height: 500px;
         padding-top: 0;
+        .fixedNav {
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            padding: 0;
+            .mainPageLink {
+                position: absolute;
+                top: 20px;
+                left: 20px;
+            }
+            #hamburgerBtn {
+                display: flex;
+                margin: 20px 20px 20px auto;
+                border: 0;
+                width: 26px;
+                height: 26px;
+                position: relative;
+                border-radius: 500px;
+                transform: rotate(0deg);
+                transition: .5s ease-in-out;
+                cursor: pointer;
+                span {
+                    display: block;
+                    position: absolute;
+                    height: 5px;
+                    width: 100%;
+                    background: #FFF;
+                    border-radius: 9px;
+                    left: 0;
+                    transform: rotate(0deg);
+                    transition: .25s ease-in-out;
+                    &:nth-child(1) {
+                        top: 0px;
+                    }
+                    &:nth-child(2) {
+                        top: 10px;
+                    }
+                    &:nth-child(3) {
+                        top: 20px;
+                    }
+                }
+                &.open span:nth-child(1) {
+                    top: 10px;
+                    transform: rotate(135deg);
+                }                  
+                &.open span:nth-child(2) {
+                    opacity: 0;
+                    left: -30px;
+                }                  
+                &.open span:nth-child(3) {
+                    top: 10px;
+                    transform: rotate(-135deg);
+                }
+            }
+            .rightNav {
+                flex-direction: column;
+                align-items: center;
+                margin: 0;
+            }
+        }
         .backgroundVideo {
             display: none;
         }
         .mainText {
-            color: rgb(151, 150, 93);
+            color: rgb(48, 47, 31);
             h1 {
                 font-size: 2.5rem;
                 margin-bottom: 50px;
@@ -562,10 +713,21 @@ body {
     }
 
     .firstStep {
+        background: none;
+        .firstStepHeadline {
+            margin: 0 auto;
+            font-size: 2rem;
+        }
         .firstStepContent {
             .surfboardTypes {
                 .surfboardContainer {
                     width: 100%;
+                    padding: 0;
+                    background: url("minifiedImages/oceanWavesBackground.png"), rgba(255, 255, 255, .4);
+                    background-blend-mode: color-dodge;
+                    .deskTypeName {
+                        margin-top: 30px;
+                    }
                     .surfboardDescription {
                         padding: 15px;
                         font-size: 1rem;
@@ -595,6 +757,20 @@ body {
             .contactIconsFooter {
                 margin-left: 50%;
                 transform: translateX(-50%);
+                .phoneBox,
+                .emailAdress {
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 330px) {
+    .footer {
+        .contactContainer {
+            .contactIconsFooter {
+                margin-left: 40%;
             }
         }
     }

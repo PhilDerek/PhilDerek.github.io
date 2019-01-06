@@ -25,51 +25,15 @@ header .hero {
   background: transparent; }
   header .hero .myNavClass {
     font-size: 26px; }
-    header .hero .myNavClass .flexHamburgerMenu {
-      display: flex;
-      flex-direction: row;
-      justify-content: center; }
-      header .hero .myNavClass .flexHamburgerMenu #hamburgerBtn {
-        border: 0;
-        width: 50px;
-        height: 50px;
-        position: relative;
-        border: 0 white solid;
-        border-radius: 500px;
-        transform: rotate(0deg);
-        transition: .5s ease-in-out;
-        cursor: pointer; }
-        header .hero .myNavClass .flexHamburgerMenu #hamburgerBtn span {
-          display: block;
-          position: absolute;
-          height: 9px;
-          width: 100%;
-          background: #1e7096;
-          border-radius: 9px;
-          opacity: 1;
-          left: 0;
-          transform: rotate(0deg);
-          transition: .25s ease-in-out; }
-          header .hero .myNavClass .flexHamburgerMenu #hamburgerBtn span:nth-child(1) {
-            top: 0px; }
-          header .hero .myNavClass .flexHamburgerMenu #hamburgerBtn span:nth-child(2) {
-            top: 18px; }
-          header .hero .myNavClass .flexHamburgerMenu #hamburgerBtn span:nth-child(3) {
-            top: 36px; }
-        header .hero .myNavClass .flexHamburgerMenu #hamburgerBtn.open span:nth-child(1) {
-          top: 18px;
-          transform: rotate(135deg); }
-        header .hero .myNavClass .flexHamburgerMenu #hamburgerBtn.open span:nth-child(2) {
-          opacity: 0;
-          left: -60px; }
-        header .hero .myNavClass .flexHamburgerMenu #hamburgerBtn.open span:nth-child(3) {
-          top: 18px;
-          transform: rotate(-135deg); }
   header .hero p {
     font-family: "Kaushan Script", cursive;
     text-align: center;
     background: transparent;
-    color: #FFE978; }
+    color: #FFE978;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); }
 
 .aboutBiałogóra {
   display: flex;
@@ -126,72 +90,51 @@ header .hero {
           transform: scale(1.2);
           cursor: pointer; }
       .aboutBiałogóra .cityGallery .imageView #img1 {
-        background-image: url("../images/Białogóra_view1.jpg"); }
+        background-image: url("../minifiedImages/Białogóra_view1.jpg"); }
       .aboutBiałogóra .cityGallery .imageView #img2 {
-        background-image: url("../images/Białogóra_view2.jpg"); }
+        background-image: url("../minifiedImages/Białogóra_view2.jpg"); }
       .aboutBiałogóra .cityGallery .imageView #img3 {
-        background-image: url("../images/Białogóra_view3.jpg"); }
+        background-image: url("../minifiedImages/Białogóra_view3.jpg"); }
       .aboutBiałogóra .cityGallery .imageView #img4 {
-        background-image: url("../images/Białogóra_view4.jpg"); }
+        background-image: url("../minifiedImages/Białogóra_view4.jpg"); }
   .aboutBiałogóra .modalBoxes {
     display: none;
     position: fixed;
     top: 0;
     left: 0;
-    padding-top: 80px;
-    width: 100%;
-    height: 100%;
-    z-index: 2;
-    overflow: hidden;
-    background-color: rgba(250, 250, 250, 0.6); }
-    .aboutBiałogóra .modalBoxes #closeIcon {
-      position: absolute;
-      top: 20px;
-      right: 150px;
-      color: #FFF;
-      font-size: 45px;
-      font-weight: bold;
-      cursor: pointer;
-      z-index: 3;
-      border-radius: 50%;
-      transition: 0.6s ease; }
-      .aboutBiałogóra .modalBoxes #closeIcon:hover,
-      .aboutBiałogóra .modalBoxes #closeIcon :active {
-        color: rgba(0, 0, 0, 0.8); }
-    .aboutBiałogóra .modalBoxes #boxContent {
+    width: 100vw;
+    height: 100vh;
+    z-index: 4; }
+    .aboutBiałogóra .modalBoxes .boxContent {
       position: relative;
-      top: -50px;
-      width: 80%;
-      max-width: 1100px;
-      margin: 0 auto; }
-      .aboutBiałogóra .modalBoxes #boxContent .boxImg {
-        display: none; }
-        .aboutBiałogóra .modalBoxes #boxContent .boxImg img {
-          width: 100%;
-          max-width: 1100px;
-          height: 70vh;
-          object-fit: cover; }
-      .aboutBiałogóra .modalBoxes #boxContent .arrow {
+      width: 100%;
+      height: 100%; }
+      .aboutBiałogóra .modalBoxes .boxContent .closeIcon {
+        position: absolute;
+        color: #FFF;
+        font-weight: bold;
+        cursor: pointer;
+        z-index: 5;
+        transition: 0.6s ease; }
+      .aboutBiałogóra .modalBoxes .boxContent .boxImg img {
+        object-fit: cover;
+        width: 100vw;
+        height: 100vh; }
+      .aboutBiałogóra .modalBoxes .boxContent .arrow {
         cursor: pointer;
         position: absolute;
         top: 50%;
+        transform: translateY(-50%);
         padding: 20px;
-        margin-top: -50px;
         color: #ebe3df;
         font-weight: bold;
         font-size: 20px;
         border-radius: 50%;
-        transition: 0.6s ease; }
-        .aboutBiałogóra .modalBoxes #boxContent .arrow:hover,
-        .aboutBiałogóra .modalBoxes #boxContent .arrow :active {
-          color: rgba(235, 227, 223, 0.8);
-          background-color: #000; }
-        .aboutBiałogóra .modalBoxes #boxContent .arrow .awesomeArrow {
-          background: transparent; }
-      .aboutBiałogóra .modalBoxes #boxContent #arrowBack {
-        left: 30px; }
-      .aboutBiałogóra .modalBoxes #boxContent #arrowNext {
-        right: 30px; }
+        transition: 0.3s ease; }
+      .aboutBiałogóra .modalBoxes .boxContent .carouselArrow1 {
+        left: 5%; }
+      .aboutBiałogóra .modalBoxes .boxContent .carouselArrow2 {
+        right: 5%; }
 
 .homeGallery {
   display: flex;
@@ -268,23 +211,17 @@ header .hero {
     justify-content: space-around; }
     .contact .contactMethods .phoneImage {
       color: lightgreen; }
-      .contact .contactMethods .phoneImage:hover {
-        animation: iconHover 2s; }
     .contact .contactMethods .mailImage {
       color: red; }
-      .contact .contactMethods .mailImage:hover {
-        animation: iconHover 2s; }
     .contact .contactMethods .facebookImage {
       color: #3B5998; }
-      .contact .contactMethods .facebookImage:hover {
-        animation: iconHover 2s; }
     .contact .contactMethods p {
       line-height: 60px; }
   .contact .backToTop {
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 99; }
+    z-index: 3; }
     .contact .backToTop .btnToTop {
       display: none;
       outline: none;
@@ -342,10 +279,20 @@ header .hero {
         overflow: hidden;
         visibility: hidden; }
     .hero p {
-      line-height: 400px;
       font-size: 60px; }
   .aboutBiałogóra h2 {
     margin: 30px auto; }
+  .aboutBiałogóra .modalBoxes .boxContent .closeIcon {
+    right: 30px;
+    top: 30px;
+    font-size: 35px; }
+    .aboutBiałogóra .modalBoxes .boxContent .closeIcon:hover,
+    .aboutBiałogóra .modalBoxes .boxContent .closeIcon :active {
+      color: #000; }
+  .aboutBiałogóra .modalBoxes .boxContent .arrow:hover,
+  .aboutBiałogóra .modalBoxes .boxContent .arrow:active {
+    color: rgba(235, 227, 223, 0.8);
+    background-color: #000; }
   .priceTable {
     min-height: 600px;
     padding-top: 40px;
@@ -370,6 +317,9 @@ header .hero {
   .facebookImage,
   .phoneImage {
     margin: 40px; }
+  .contactMethods .mailImage:hover,
+  .contactMethods .facebookImage:hover {
+    animation: iconHover 2s; }
   .contactMethods p {
     padding-top: 40px; }
   .mapContainer {
@@ -393,13 +343,20 @@ header .hero {
       justify-content: flex-end; }
       .hero .respContent .textForNavbar {
         border: transparent solid; }
-        .hero .respContent .textForNavbar:hover {
-          cursor: pointer; }
+        .hero .respContent .textForNavbar .navElem {
+          color: black; }
     .hero p {
-      line-height: 400px;
       font-size: 60px; }
   .aboutBiałogóra h2 {
     margin: 30px auto; }
+  .aboutBiałogóra .modalBoxes .boxContent .closeIcon {
+    right: 30px;
+    top: 30px;
+    font-size: 35px;
+    color: #000; }
+  .aboutBiałogóra .modalBoxes .boxContent .arrow {
+    color: rgba(235, 227, 223, 0.8);
+    background-color: #000; }
   .homeGallery {
     justify-content: center; }
     .homeGallery .galleryTitle p {
@@ -462,16 +419,13 @@ header .hero {
           cursor: default;
           font-weight: normal;
           margin-left: 0; }
-    .hero p {
-      line-height: 400px;
-      font-size: 60px; }
   .aboutBiałogóra h2 {
     margin: 30px auto; }
   .aboutBiałogóra .cityGallery {
     flex-wrap: wrap; }
     .aboutBiałogóra .cityGallery .imageView {
       width: 50%; }
-  .aboutBiałogóra .modalBoxes #closeIcon {
+  .aboutBiałogóra .modalBoxes .closeIcon {
     right: 120px;
     top: 30px; }
   .homeGallery {
@@ -530,25 +484,52 @@ header .hero {
           justify-content: center; }
           header .hero .myNavClass .flexLogo .myBrandLogo {
             font-size: 20px; }
-        header .hero .myNavClass .hamburgerMenuClass {
-          font-size: 20px; }
+        header .hero .myNavClass .flexHamburgerMenu {
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          padding-bottom: 10px; }
+          header .hero .myNavClass .flexHamburgerMenu .hamburgerMenuClass {
+            border: 0;
+            width: 35px;
+            height: 30px;
+            position: relative;
+            border: 0 white solid;
+            border-radius: 500px;
+            transform: rotate(0deg);
+            transition: .5s ease-in-out; }
+            header .hero .myNavClass .flexHamburgerMenu .hamburgerMenuClass span {
+              display: block;
+              position: absolute;
+              height: 6px;
+              width: 100%;
+              background: #1e7096;
+              border-radius: 9px;
+              opacity: 1;
+              left: 0;
+              transform: rotate(0deg);
+              transition: .25s ease-in-out; }
+              header .hero .myNavClass .flexHamburgerMenu .hamburgerMenuClass span:nth-child(1) {
+                top: 0px; }
+              header .hero .myNavClass .flexHamburgerMenu .hamburgerMenuClass span:nth-child(2) {
+                top: 15px; }
+              header .hero .myNavClass .flexHamburgerMenu .hamburgerMenuClass span:nth-child(3) {
+                top: 30px; }
+            header .hero .myNavClass .flexHamburgerMenu .hamburgerMenuClass.open span:nth-child(1) {
+              top: 15px;
+              transform: rotate(135deg); }
+            header .hero .myNavClass .flexHamburgerMenu .hamburgerMenuClass.open span:nth-child(2) {
+              opacity: 0;
+              left: -60px; }
+            header .hero .myNavClass .flexHamburgerMenu .hamburgerMenuClass.open span:nth-child(3) {
+              top: 15px;
+              transform: rotate(-135deg); }
         header .hero .myNavClass .respContent {
           align-items: center; }
           header .hero .myNavClass .respContent .textForNavbar {
             border: transparent solid; }
-            header .hero .myNavClass .respContent .textForNavbar .nav-link {
+            header .hero .myNavClass .respContent .textForNavbar .navElem {
               padding: .2rem 1rem; }
-            header .hero .myNavClass .respContent .textForNavbar:hover {
-              border-bottom: none;
-              cursor: default;
-              font-weight: normal;
-              margin-left: 0; }
-      header .hero p {
-        line-height: normal;
-        position: absolute;
-        top: 50%;
-        left: 2%;
-        font-size: 60px; }
   .aboutBiałogóra h2 {
     font-size: 22px;
     margin: 30px auto; }
@@ -560,13 +541,13 @@ header .hero {
       width: 100%; }
   .aboutBiałogóra .modalBoxes {
     padding-top: 0; }
-    .aboutBiałogóra .modalBoxes #closeIcon {
+    .aboutBiałogóra .modalBoxes .closeIcon {
       right: 30px;
       top: 30px; }
-    .aboutBiałogóra .modalBoxes #boxContent {
+    .aboutBiałogóra .modalBoxes .boxContent {
       margin-top: 50%;
       width: 85%; }
-      .aboutBiałogóra .modalBoxes #boxContent img {
+      .aboutBiałogóra .modalBoxes .boxContent img {
         height: 80vh; }
   .homeGallery {
     height: 70vh;

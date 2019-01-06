@@ -46,59 +46,16 @@ header {
         background: transparent;       
         .myNavClass {
             font-size: 26px;
-            .flexHamburgerMenu {
-                @include flexCentRow();
-                #hamburgerBtn {
-                    border: 0;
-                    width: 50px;
-                    height: 50px;
-                    position: relative;
-                    border: 0 white solid;
-                    border-radius: 500px;
-                    transform: rotate(0deg);
-                    transition: .5s ease-in-out;
-                    cursor: pointer;
-                    span{
-                        display: block;
-                        position: absolute;
-                        height: 9px;
-                        width: 100%;
-                        background: #1e7096;
-                        border-radius: 9px;
-                        opacity: 1;
-                        left: 0;
-                        transform: rotate(0deg);
-                        transition: .25s ease-in-out;
-                        &:nth-child(1) {
-                            top: 0px;
-                        }
-                        &:nth-child(2) {
-                            top: 18px;
-                        }
-                        &:nth-child(3) {
-                            top: 36px;
-                        }                    
-                    }
-                    &.open span:nth-child(1) {
-                        top: 18px;
-                        transform: rotate(135deg);
-                    }                  
-                    &.open span:nth-child(2) {
-                        opacity: 0;
-                        left: -60px;
-                    }                  
-                    &.open span:nth-child(3) {
-                        top: 18px;
-                        transform: rotate(-135deg);
-                    }
-                }
-            }    
         }
         p {
             font-family: $font-family-main-title;
             text-align: center;    
             background: transparent;
             color: $sand-color;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
         }
     }   
 }    
@@ -164,7 +121,7 @@ header {
             }
             @for $i from 1 through 4 {
                 #img#{$i} {
-                    background-image: url("../images/Białogóra_view#{$i}.jpg");
+                    background-image: url("../minifiedImages/Białogóra_view#{$i}.jpg");
                 }
             }
         }
@@ -174,68 +131,45 @@ header {
         position: fixed;
         top: 0;
         left: 0;
-        padding-top: 80px;
-        width: 100%;
-        height: 100%;
-        z-index: 2;
-        overflow: hidden;
-        @include opacityBackg();
-        #closeIcon {
-            position: absolute;
-            top: 20px;
-            right: 150px;
-            color: #FFF;
-            font-size: 45px;
-            font-weight: bold;
-            cursor: pointer;
-            z-index: 3;
-            border-radius: 50%;
-            transition: 0.6s ease;
-            &:hover,
-            :active {
-                color: rgba(0, 0, 0, 0.8);
-            }
-        }
-        #boxContent {
+        width: 100vw;
+        height: 100vh;
+        z-index: 4;
+        .boxContent {
             position: relative;
-            top: -50px;
-            width: 80%;
-            max-width: 1100px;
-            margin: 0 auto;
+            width: 100%;
+            height: 100%;
+            .closeIcon {
+                position: absolute;
+                color: #FFF;
+                font-weight: bold;
+                cursor: pointer;
+                z-index: 5;
+                transition: 0.6s ease;
+            }
             .boxImg {
-                display: none;
                 img {
-                    width: 100%;
-                    max-width: 1100px;
-                    height: 70vh;
                     object-fit: cover;
+                    width: 100vw;
+                    height: 100vh;
                 }
             }
             .arrow {
                 cursor: pointer;
                 position: absolute;
                 top: 50%;
+                transform: translateY(-50%);
                 padding: 20px;
-                margin-top: -50px;
                 color: rgb(235, 227, 223);
                 font-weight: bold;
                 font-size: 20px;
                 border-radius: 50%;
-                transition: 0.6s ease;
-                &:hover,
-                 :active {
-                    color: rgba(235, 227, 223, 0.8);
-                    background-color: #000;
-                }
-                .awesomeArrow {
-                    background: transparent;
-                } 
+                transition: 0.3s ease;
             }
-            #arrowBack {
-                left: 30px;
+            .carouselArrow1 {
+                left: 5%;
             }
-            #arrowNext {
-                right: 30px;
+            .carouselArrow2 {
+                right: 5%;
             }
         }
     }
@@ -326,21 +260,13 @@ header {
         justify-content: space-around;
         .phoneImage {
             color: lightgreen;
-            &:hover {
-                animation: iconHover 2s;
-            }  
         }        
         .mailImage {
             color: red;
-            &:hover {
-                animation: iconHover 2s;
-            }
+            
         }
         .facebookImage {
             color: $facebook-color;
-            &:hover {
-                animation: iconHover 2s;
-            }
         }
         p {
             line-height: 60px;
@@ -351,7 +277,7 @@ header {
         display: flex;
         justify-content: center;
         align-items: center;
-        z-index: 99;
+        z-index: 3;
         .btnToTop {
             display: none;
             outline: none;
@@ -419,13 +345,30 @@ header {
             }
         }
         p {
-            line-height: 400px;
             font-size: 60px;
         }
     }   
     .aboutBiałogóra {
         h2 {
             margin: 30px auto;
+        }
+        .modalBoxes {
+            .boxContent {
+                .closeIcon {
+                    right: 30px;
+                    top: 30px;
+                    font-size: 35px;
+                    &:hover,
+                    :active {
+                        color: #000;
+                    }
+                }
+                .arrow:hover,
+                .arrow:active {
+                   color: rgba(235, 227, 223, 0.8);
+                   background-color: #000;
+               }
+            }
         }
     }
     .priceTable {
@@ -460,6 +403,10 @@ header {
         margin: 40px;
     }
     .contactMethods {
+        .mailImage:hover,
+        .facebookImage:hover {
+            animation: iconHover 2s;
+        }
         p {
             padding-top: 40px;
         }
@@ -487,19 +434,32 @@ header {
             justify-content: flex-end;
             .textForNavbar {
                 border: transparent solid;
-                &:hover {
-                    cursor: pointer;
+                .navElem {
+                    color: rgba(0, 0, 0, 1);
                 }
             }
         }
         p {
-            line-height: 400px;
             font-size: 60px;
         }
     }   
     .aboutBiałogóra {
         h2 {
             margin: 30px auto;
+        }
+        .modalBoxes {
+            .boxContent {
+                .closeIcon {
+                    right: 30px;
+                    top: 30px;
+                    font-size: 35px;
+                    color: #000;
+                }
+                .arrow {
+                    color: rgba(235, 227, 223, 0.8);
+                    background-color: #000;
+                }
+            }
         }
     }
     .homeGallery {
@@ -587,10 +547,6 @@ header {
                 }
             }
         }
-        p {
-            line-height: 400px;
-            font-size: 60px;
-        }
     }   
     .aboutBiałogóra {
         h2 {
@@ -603,7 +559,7 @@ header {
             }
         }
         .modalBoxes {
-            #closeIcon {
+            .closeIcon {
                 right: 120px;
                 top: 30px;
             }
@@ -684,32 +640,62 @@ header {
                         font-size: 20px;
                     }
                 }
-                .hamburgerMenuClass {
-                    font-size: 20px;
+                .flexHamburgerMenu {
+                    @include flexCentRow();
+                    padding-bottom: 10px;
+                    .hamburgerMenuClass {
+                        border: 0;
+                        width: 35px;
+                        height: 30px;
+                        position: relative;
+                        border: 0 white solid;
+                        border-radius: 500px;
+                        transform: rotate(0deg);
+                        transition: .5s ease-in-out;
+                        span{
+                            display: block;
+                            position: absolute;
+                            height: 6px;
+                            width: 100%;
+                            background: #1e7096;
+                            border-radius: 9px;
+                            opacity: 1;
+                            left: 0;
+                            transform: rotate(0deg);
+                            transition: .25s ease-in-out;
+                            &:nth-child(1) {
+                                top: 0px;
+                            }
+                            &:nth-child(2) {
+                                top: 15px;
+                            }
+                            &:nth-child(3) {
+                                top: 30px;
+                            }                    
+                        }
+                        &.open span:nth-child(1) {
+                            top: 15px;
+                            transform: rotate(135deg);
+                        }                  
+                        &.open span:nth-child(2) {
+                            opacity: 0;
+                            left: -60px;
+                        }                  
+                        &.open span:nth-child(3) {
+                            top: 15px;
+                            transform: rotate(-135deg);
+                        }
+                    }
                 }
                 .respContent {
                     align-items: center;
                     .textForNavbar {
                         border: transparent solid;
-                        .nav-link {
+                        .navElem {
                             padding: .2rem 1rem;
-                        }
-                        &:hover {
-                            border-bottom: none;
-                            cursor: default;
-                            font-weight: normal;
-                            margin-left: 0;
                         }
                     }
                 }
-            }
-            
-            p {
-                line-height: normal;
-                position: absolute;
-                top: 50%;
-                left: 2%;
-                font-size: 60px;
             }
         }   
     }
@@ -730,11 +716,11 @@ header {
         }
         .modalBoxes {
             padding-top: 0;
-            #closeIcon {
+            .closeIcon {
                 right: 30px;
                 top: 30px;
             }
-            #boxContent {
+            .boxContent {
                 margin-top: 50%;
                 width: 85%;
                 img {

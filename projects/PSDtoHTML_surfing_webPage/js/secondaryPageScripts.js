@@ -19,11 +19,11 @@ $(document).ready(function() {
         line.style.transform = "rotate(" + lineSlopeDegrees + "deg)";
     }
     
-    var rect2 = document.querySelector(".surfboardDescription").getBoundingClientRect();
+    var rect = document.querySelector(".surfboardDescription").getBoundingClientRect();
     
     var newElem2 = document.getElementById("dotTest2");
-    newElem2.style.top = window.pageYOffset + rect2.top + "px";
-    newElem2.style.left = rect2.left + rect2.width / 2 + "px";
+    newElem2.style.top = window.pageYOffset + rect.top + "px";
+    newElem2.style.left = rect.left + rect.width / 2 + "px";
     document.body.appendChild(newElem2);
 
     if (window.matchMedia("(min-width: 1200px)").matches) {
@@ -31,7 +31,7 @@ $(document).ready(function() {
             function() {
                 var x1Value = $(this).offset().left + $(this).outerWidth() / 3;
                 var y1Value = $(this).offset().top + $(this).outerHeight();    
-                var x2Value = rect2.left + rect2.width / 2;
+                var x2Value = rect.left + rect.width / 2;
                 var y2Value = newElem2.getBoundingClientRect().top + window.pageYOffset;
                 createLineSurfboardDescription(x1Value, y1Value, x2Value, y2Value, "line");
                 $("#line").stop().fadeIn();
@@ -60,6 +60,26 @@ $(document).ready(function() {
     $(".jQueryClick").click(function() {
         $(this).siblings().fadeToggle( "fast", "linear" );
     })
+
+    //Fixed nav
+    $(window).scroll(function () {
+        var navHeight = $(".fixedNav").height();
+        var pageYOffset = window.pageYOffset;
+        if (pageYOffset > navHeight) {
+            $(".fixedNav").css({position: "fixed"});
+        } else {
+            $(".fixedNav").css({position: "absolute"});
+        }
+    })
+
+    // hamburger menu animation
+    if ($(window).width() < 600) {
+        $(".rightNav").css({display: "none"});
+        $("#hamburgerBtn").click(function() {
+            $(this).toggleClass("open");
+            $(".rightNav").slideToggle("slow");
+        });
+    }
 })
 
 

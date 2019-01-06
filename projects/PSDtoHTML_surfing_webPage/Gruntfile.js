@@ -47,6 +47,17 @@ module.exports = function(grunt) {
             }
         },
 
+        imagemin: {
+            dynamic: {
+                files: [{
+                    expand: true,
+                    cwd: 'images/',
+                    src: ['**/*.{png,jpg,JPG,jpeg,gif}'],
+                    dest: 'minifiedImages/'
+                }]
+            }
+        },
+
         watch: {
             css: {
                 files: '**/*.scss',
@@ -58,14 +69,9 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-sass');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-contrib-imagemin');
     grunt.loadNpmTasks('grunt-contrib-watch');
   
-    grunt.registerTask('default', ['sass', 'cssmin', 'uglify', 'watch']);
+    grunt.registerTask('default', ['sass', 'cssmin', 'uglify', 'imagemin', 'watch']);
   
   };
-
-  
-// uglify: {
-//    files: ['**/*.js', '!**/*.min.js'],
-//    tasks: ['uglify']
-//}
