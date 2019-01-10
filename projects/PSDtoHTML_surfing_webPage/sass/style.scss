@@ -57,14 +57,13 @@ html {
 }
 
 body {
-    position: relative;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 header {
     position: relative;
     height: 100vh;
-    .flexibleNav {
+    .fixedNav {
         position: absolute;
         left: 0;
         width: 100%;
@@ -410,7 +409,7 @@ header {
 
 @media only screen and (min-width: 1200px) {
     header {
-        .flexibleNav {
+        .fixedNav {
             .navStyle {
                 .linkStyle:hover {
                     background-color: rgb(156, 196, 207);
@@ -855,10 +854,10 @@ header {
 
 @media only screen and (max-width: 600px) {
     header {
-        width: 100%;
+        width: 100vw;
         margin: 0;
         padding: 0;
-        .flexibleNav {
+        .fixedNav {
             display: flex;
             background-color: rgba(29, 161, 242, .8);
             z-index: 3;
@@ -1063,6 +1062,15 @@ header {
             p:nth-of-type(1),
             p:nth-of-type(2) {
                 margin-left: 0;
+            }
+        }
+    }
+
+    .repeatNav {
+        .footerNav {
+            .footerNavElem {
+                padding: 0;
+                width: 25%;
             }
         }
     }

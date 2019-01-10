@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
-    //shop arrows functions
-    var deskBoxWidth = document.querySelector(".surfboard1").offsetWidth; //480
+    
+    var deskBoxWidth = document.querySelector(".surfboard1").offsetWidth;
 
     var boardBox = $(".boardBox");
     var leftPosition = 0;
@@ -77,7 +77,7 @@ $(document).ready(function() {
         
     })
 
-    //surfboard positioning
+    
     var howManyImages = document.querySelectorAll(".boardBox img");
     
     for (var i = 1; i <= howManyImages.length; i++) {
@@ -86,7 +86,7 @@ $(document).ready(function() {
         $(".surfboard" +[i]+ " img").css("left", boardBackgroundWidth * .5 - surfboardImage * .5);
     }
 
-    // hamburger menu animation
+    
     if ($(window).width() < 600) {
         $("#hamburgerBtn").click(function() {
             $(this).toggleClass("open").addClass("ml-auto");
@@ -97,7 +97,7 @@ $(document).ready(function() {
         $("header").removeClass("container");
     }
 
-    // main headline animation
+    
     if (window.matchMedia("(min-width: 601px)").matches) {
         $(".mainHeaderText").css("position", "relative").css("left", "-50vw").animate({
             left: "0"
@@ -108,7 +108,7 @@ $(document).ready(function() {
         }, 1500);
     }
     
-    //email validation
+    
     $(".pushEmailBtn").click(function (event) {
         event.preventDefault();
         var emailRegEx = /^[0-9a-z_.-]+@[0-9a-z.-]+\.[a-z]{2,3}$/i
@@ -135,23 +135,23 @@ $(document).ready(function() {
         $(".emailInput").css({boxShadow: "none"});
     })
 
-    //Fixed nav
+    
     $(window).scroll(function () {
-        var navHeight = $(".flexibleNav").height();
+        var navHeight = $(".fixedNav").height();
         var pageYOffset = window.pageYOffset;
         if (window.matchMedia("(min-width: 601px)").matches) {
             if (pageYOffset > navHeight) {
-                $(".flexibleNav").css({position: "fixed", backgroundColor: "rgba(156, 196, 207, .8)", paddingRight: "12%"});
+                $(".fixedNav").css({position: "fixed", backgroundColor: "rgba(156, 196, 207, .8)", paddingRight: "12%"});
                 $(".linkStyle").css({color: "#000"});
             } else {
-                $(".flexibleNav").css({position: "absolute", backgroundColor: "transparent", paddingRight: "30px"});
+                $(".fixedNav").css({position: "absolute", backgroundColor: "transparent", paddingRight: "30px"});
                 $(".linkStyle").css({color: "#FFF"});
             }
         } else if (window.matchMedia("(max-width: 600px)").matches) {
             if (pageYOffset > navHeight) {
-                $(".flexibleNav").css({position: "fixed"});
+                $(".fixedNav").css({position: "fixed"});
             } else {
-                $(".flexibleNav").css({position: "absolute"});
+                $(".fixedNav").css({position: "absolute"});
             }
         }
     })

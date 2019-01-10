@@ -6,21 +6,20 @@ html {
   scroll-behavior: smooth; }
 
 body {
-  position: relative;
-  overflow: hidden; }
+  overflow-x: hidden; }
 
 header {
   position: relative;
   height: 100vh; }
-  header .flexibleNav {
+  header .fixedNav {
     position: absolute;
     left: 0;
     width: 100%;
     z-index: 6;
     padding-right: 30px; }
-    header .flexibleNav .navStyle {
+    header .fixedNav .navStyle {
       font-family: "Open Sans", sans-serif; }
-      header .flexibleNav .navStyle .linkStyle {
+      header .fixedNav .navStyle .linkStyle {
         color: #FFF; }
   header .rightPartOfHeader {
     color: grey;
@@ -340,7 +339,7 @@ header {
     color: #000; }
 
 @media only screen and (min-width: 1200px) {
-  header .flexibleNav .navStyle .linkStyle:hover {
+  header .fixedNav .navStyle .linkStyle:hover {
     background-color: #9cc4cf; }
   header .rightPartOfHeader {
     width: 550px;
@@ -591,16 +590,16 @@ header {
 
 @media only screen and (max-width: 600px) {
   header {
-    width: 100%;
+    width: 100vw;
     margin: 0;
     padding: 0; }
-    header .flexibleNav {
+    header .fixedNav {
       display: flex;
       background-color: rgba(29, 161, 242, 0.8);
       z-index: 3; }
-      header .flexibleNav .littleBoard {
+      header .fixedNav .littleBoard {
         display: none; }
-      header .flexibleNav #hamburgerBtn {
+      header .fixedNav #hamburgerBtn {
         margin: 10px auto;
         border: 0;
         width: 26px;
@@ -610,7 +609,7 @@ header {
         transform: rotate(0deg);
         transition: .5s ease-in-out;
         cursor: pointer; }
-        header .flexibleNav #hamburgerBtn span {
+        header .fixedNav #hamburgerBtn span {
           display: block;
           position: absolute;
           height: 5px;
@@ -620,26 +619,26 @@ header {
           left: 0;
           transform: rotate(0deg);
           transition: .25s ease-in-out; }
-          header .flexibleNav #hamburgerBtn span:nth-child(1) {
+          header .fixedNav #hamburgerBtn span:nth-child(1) {
             top: 0px; }
-          header .flexibleNav #hamburgerBtn span:nth-child(2) {
+          header .fixedNav #hamburgerBtn span:nth-child(2) {
             top: 10px; }
-          header .flexibleNav #hamburgerBtn span:nth-child(3) {
+          header .fixedNav #hamburgerBtn span:nth-child(3) {
             top: 20px; }
-        header .flexibleNav #hamburgerBtn.open span:nth-child(1) {
+        header .fixedNav #hamburgerBtn.open span:nth-child(1) {
           top: 10px;
           transform: rotate(135deg); }
-        header .flexibleNav #hamburgerBtn.open span:nth-child(2) {
+        header .fixedNav #hamburgerBtn.open span:nth-child(2) {
           opacity: 0;
           left: -30px; }
-        header .flexibleNav #hamburgerBtn.open span:nth-child(3) {
+        header .fixedNav #hamburgerBtn.open span:nth-child(3) {
           top: 10px;
           transform: rotate(-135deg); }
-      header .flexibleNav .navStyle {
+      header .fixedNav .navStyle {
         display: none;
         width: 100%;
         text-align: center; }
-        header .flexibleNav .navStyle .linkStyle {
+        header .fixedNav .navStyle .linkStyle {
           margin: 15px auto;
           color: #FFF;
           font-weight: bold;
@@ -742,7 +741,10 @@ header {
       width: 100%; }
       .contacts .contactsText p:nth-of-type(1),
       .contacts .contactsText p:nth-of-type(2) {
-        margin-left: 0; } }
+        margin-left: 0; }
+  .repeatNav .footerNav .footerNavElem {
+    padding: 0;
+    width: 25%; } }
 
 @media only screen and (max-width: 330px) {
   header .mainHeaderText p:nth-of-type(2) {

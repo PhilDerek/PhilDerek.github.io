@@ -4,65 +4,65 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>kamień, papier, nożyce</title>
+    <title>Rock Paper Scissors</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
-    <main id="bigImage">
-        <div id="title">
+    <main id="bigImage" class="mainContainer">
+        <div id="title" class="title">
             <div>
-                <p>Welcome to the game <span id="rockText" class="lettersTitle">Rock</span> <span id="paperText" class="lettersTitle">Paper</span> <span id="scissorsText" class="lettersTitle">Scissors</span></p>
+                <p>Welcome to the game <span id="rockText" class="lettersTitle rockText">Rock</span> <span id="paperText" class="lettersTitle paperText">Paper</span> <span id="scissorsText" class="lettersTitle scissorsText">Scissors</span></p>
                 <p>Gain 10 points to win the game</p>
             </div>
         </div>
-        <div id="newGame" class="flex-container">
+        <div id="newGame" class="flex-container newGame">
             <div class="box">
                 <p>Welcome to the game <span class="gameName">Rock, paper, scissors!</span></p>
-                <button id="startGame" class="flex-item btn btn-primary">New Game</button>
+                <button id="startGame" class="flex-item btn btn-primary startGame">New Game</button>
             </div> 
         </div>
-        <div id="playerNameWindow" class="flex-container">
+        <div id="playerNameWindow" class="flex-container playerNameWindow">
             <div class="box">
                 <p>Enter Your name:</p>
                 <input type="text" id="inputName" placeholder="name">
-                <button id="finalStart" class="flex-item btn btn-primary">Let's start</button>
+                <button id="finalStart" class="flex-item btn btn-primary finalStart">Let's start</button>
             </div>
         </div>
-        <div id="gameStarted">
-            <div id="gameButtons">
+        <div id="gameStarted" class="gameStarted">
+            <div id="gameButtons" class="gameButtons">
                 <button type="button" id="rock" class="btn btn-light btn-lg btn-rps"><img src="images/icons8-rock-50.png"> Rock</button>
                 <button id="paper" class="btn btn-light btn-lg btn-rps"><img src="images/icons8-paper-50.png"> Paper</button>
                 <button id="scissors" class="btn btn-light btn-lg btn-rps"><img src="images/icons8-scissors-50.png"> Scissors</button>
             </div>
-            <div id="names">
+            <div id="names" class="names">
                 <span id="playerName">Player</span>
                 <span id="computerName">Computer</span>
             </div>
-            <div id="score">
+            <div id="score" class="score">
                 <p id="playerScore">0</p>
                 <p id="computerScore">0</p>
             </div>
-            <div id="choices">
+            <div id="choices" class="choices">
                 <span id="playerPick"></span>
                 <span id="computerPick"></span>
             </div>            
         </div>
-        <div id="selectedIcons">
+        <div id="selectedIcons" class="selectedIcons">
             <span id="playerSelectedIcon"></span>
             <span id="computerSelectedIcon"></span>
         </div>
-        <div id="gameEnd1" class="flex-container">
+        <div id="gameEnd1" class="flex-container gameEnd1">
             <div class="box">
                 <p class="flex-item">You Won! Well done!</p>
-                <button class="reloadButton flex-item btn btn-primary">Play again</button>
+                <button class="flex-item btn btn-primary reloadButton">Play again</button>
             </div>                        
         </div>
-        <div id="gameEnd2" class="flex-container">
+        <div id="gameEnd2" class="flex-container gameEnd2">
             <div class="box">
                 <p class="flex-item">You lost! Dont't give up!</p>
-                <button class="reloadButton flex-item btn btn-primary">Play again</button>
+                <button class="flex-item btn btn-primary reloadButton">Play again</button>
             </div>    
         </div>
     </main>

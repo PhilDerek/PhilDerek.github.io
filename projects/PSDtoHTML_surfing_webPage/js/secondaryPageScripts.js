@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    // surfboard description and line animation
+    
     function createLineSurfboardDescription (x1, y1, x2, y2, lineName) {
         var pointsDistance = Math.sqrt((x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2));
     
@@ -42,7 +42,6 @@ $(document).ready(function() {
     }
     
 
-    //fixed waves animation
     var savedScrollDistance = 0;
     $(window).scroll(function() {
         if (document.body.getBoundingClientRect().top > savedScrollDistance) {
@@ -56,12 +55,12 @@ $(document).ready(function() {
         savedScrollDistance = document.body.getBoundingClientRect().top;
     })
 
-    //Contact text show
+
     $(".jQueryClick").click(function() {
         $(this).siblings().fadeToggle( "fast", "linear" );
     })
 
-    //Fixed nav
+
     $(window).scroll(function () {
         var navHeight = $(".fixedNav").height();
         var pageYOffset = window.pageYOffset;
@@ -72,7 +71,7 @@ $(document).ready(function() {
         }
     })
 
-    // hamburger menu animation
+
     if ($(window).width() < 600) {
         $(".rightNav").css({display: "none"});
         $("#hamburgerBtn").click(function() {
