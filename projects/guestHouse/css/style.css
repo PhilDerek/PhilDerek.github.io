@@ -24,7 +24,8 @@ header .hero {
   min-height: 400px;
   background: transparent; }
   header .hero .myNavClass {
-    font-size: 26px; }
+    font-size: 26px;
+    z-index: 4; }
   header .hero p {
     font-family: "Kaushan Script", cursive;
     text-align: center;

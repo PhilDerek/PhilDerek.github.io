@@ -1,5 +1,4 @@
 $(document).ready(function() {
-
     
     var deskBoxWidth = document.querySelector(".surfboard1").offsetWidth;
 
