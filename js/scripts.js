@@ -12,12 +12,17 @@ $(function() {
     $(window).scroll(function () {
         var navHeight = $(".navFixed").height();
         var pageYOffset = window.pageYOffset;
-        if (window.matchMedia("(max-width: 600px)").matches) {
-            if (pageYOffset > navHeight) {
-                $(".navFixed").css({position: "fixed"});
-            } else {
-                $(".navFixed").css({position: "absolute"});
-            }
+
+        if (pageYOffset > navHeight) {
+            $(".navFixed").css({position: "fixed"});
+        } else {
+            $(".navFixed").css({position: "absolute"});
+        }
+        
+        if (window.matchMedia("(min-width: 601px)").matches && pageYOffset > navHeight) {
+            $(".navFixed").css({backgroundColor: "#222"});
+        } else if (window.matchMedia("(min-width: 601px)").matches) {
+            $(".navFixed").css({backgroundColor: "transparent"});
         }
     })
 

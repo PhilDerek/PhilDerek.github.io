@@ -1,8 +1,3 @@
-@font-face {
-    font-family: "anke";
-    src: url("../anke.otf");
-}
-
 $mainColor: #766F57;
 $textMainColor: #FFF;
 $textSecondColor: #cc9c00;
@@ -12,19 +7,16 @@ $tabletHeadline2Size: 2rem;
 $mobileHeadline2Size: 1.5rem;
 
 @mixin h2Desktop {
-    font-family: "anke";
     font-size: $headline2Size;
     margin: 30px auto;
 }
 
 @mixin h2Tablet {
-    font-family: "anke";
     font-size: $tabletHeadline2Size;
     margin: 25px auto;
 }
 
 @mixin h2Mobile {
-    font-family: "anke";
     font-size: $mobileHeadline2Size;
     margin: 20px auto;
 }
@@ -46,6 +38,10 @@ $mobileHeadline2Size: 1.5rem;
 html {
     scroll-behavior: smooth;
     overflow-x: hidden;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
 }
 
 header {
@@ -80,6 +76,7 @@ header {
         position: absolute;
         top: 0;
         right: 0;
+        width: 100%;
         #hamburgerBtn {
             margin-top: 10px;
             border: 0;
@@ -184,7 +181,6 @@ header {
             #tech#{$i} {               
                 @include flexCent();
                 p {
-                    font-family: "anke";
                     font-weight: bold;
                 }
             }
@@ -358,6 +354,7 @@ footer {
         .menuTop {
             display: flex;
             flex-direction: row;
+            height: 80px;
         }
         a {
             transition: all .4s ease-in-out;
@@ -372,6 +369,7 @@ footer {
     }
     .firstLookBox {
         h1 {
+            font-family: 'Noto Sans', sans-serif;
             font-size: 4rem;
             margin: 30px auto;
         }

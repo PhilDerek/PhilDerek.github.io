@@ -1,12 +1,5 @@
-@import url('https://fonts.googleapis.com/css?family=Work+Sans');
-@import url('https://fonts.googleapis.com/css?family=Kaushan+Script');
-
-@font-face {
-    font-family: avenirNextFont;
-    src: url("AvenirNextLTPro-It.otf");
-}
-
 $font-family-main-title: 'Kaushan Script', cursive;
+$font-family-workSans: 'Work Sans', sans-serif;
 
 $facebook-color: #3B5998;
 $sand-color: #FFE978;
@@ -28,7 +21,7 @@ $carousel-transition: .5s;
 }
 
 body {
-    font-family: 'Work Sans', sans-serif;
+    font-family: $font-family-workSans;
     width: 90%;
     margin: 0 auto;
     background-image: url("https://static9.depositphotos.com/1098496/1178/i/950/depositphotos_11786094-stock-photo-sandbackground.jpg");
@@ -72,14 +65,12 @@ header {
     background-color: $sand-color;   
     h2 {
         font-size: 36px;
-        font-family: avenirNextFont;
         font-weight: bold;
         letter-spacing: .05em;
     }
     p {
         text-align: justify;
         font-size: 19px;
-        font-family: avenirNextFont;
         padding: 0 30px;
         line-height: 1.5em;
     } 
@@ -305,9 +296,6 @@ header {
     }
 }
 
-.showNavbarClass {
-    display: block;
-}
 
 @keyframes iconHover {
     0% {transform: scale(1.0)}
@@ -468,7 +456,6 @@ header {
         .galleryTitle p {
             font-weight: bold;
             margin: 20px auto;
-            font-family: avenirNextFont;
             font-size: 50px;
         }
         .myOwnCarouselClass {
@@ -572,7 +559,6 @@ header {
         .galleryTitle p {
             font-weight: bold;
             margin: 20px auto;
-            font-family: avenirNextFont;
             font-size: 50px;
         }
         .myOwnCarouselClass {
@@ -737,7 +723,6 @@ header {
         .galleryTitle p {
             font-weight: bold;
             margin: 20px auto;
-            font-family: avenirNextFont;
             font-size: 50px;
         }
         .myOwnCarouselClass {

@@ -1,15 +1,9 @@
 @charset "UTF-8";
-@import url("https://fonts.googleapis.com/css?family=Work+Sans");
-@import url("https://fonts.googleapis.com/css?family=Kaushan+Script");
-@font-face {
-  font-family: avenirNextFont;
-  src: url("AvenirNextLTPro-It.otf"); }
-
 * {
   box-sizing: border-box; }
 
 body {
-  font-family: 'Work Sans', sans-serif;
+  font-family: "Work Sans", sans-serif;
   width: 90%;
   margin: 0 auto;
   background-image: url("https://static9.depositphotos.com/1098496/1178/i/950/depositphotos_11786094-stock-photo-sandbackground.jpg");
@@ -47,13 +41,11 @@ header .hero {
   background-color: #FFE978; }
   .aboutBiałogóra h2 {
     font-size: 36px;
-    font-family: avenirNextFont;
     font-weight: bold;
     letter-spacing: .05em; }
   .aboutBiałogóra p {
     text-align: justify;
     font-size: 19px;
-    font-family: avenirNextFont;
     padding: 0 30px;
     line-height: 1.5em; }
   .aboutBiałogóra .cityGallery {
@@ -244,9 +236,6 @@ header .hero {
     padding-left: 20px;
     font-size: 13px; }
 
-.showNavbarClass {
-  display: block; }
-
 @keyframes iconHover {
   0% {
     transform: scale(1); }
@@ -363,7 +352,6 @@ header .hero {
     .homeGallery .galleryTitle p {
       font-weight: bold;
       margin: 20px auto;
-      font-family: avenirNextFont;
       font-size: 50px; }
     .homeGallery .myOwnCarouselClass {
       width: 100%; }
@@ -435,7 +423,6 @@ header .hero {
     .homeGallery .galleryTitle p {
       font-weight: bold;
       margin: 20px auto;
-      font-family: avenirNextFont;
       font-size: 50px; }
     .homeGallery .myOwnCarouselClass {
       width: 100%;
@@ -556,7 +543,6 @@ header .hero {
     .homeGallery .galleryTitle p {
       font-weight: bold;
       margin: 20px auto;
-      font-family: avenirNextFont;
       font-size: 50px; }
     .homeGallery .myOwnCarouselClass {
       height: 40vh;
