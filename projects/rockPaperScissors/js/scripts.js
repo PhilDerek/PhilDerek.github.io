@@ -11,14 +11,10 @@ function pickFunc () {
     return choice[Math.floor(Math.random() * 3)];   
 }
 
-var gameEnd1 = document.getElementById("gameEnd1");
-var gameEnd2 = document.getElementById("gameEnd2");
-
 function afterScore () {
     title.style.display = "none";
     gameStarted.style.display = "none";
     selectedIcons.style.display = "none";
-    mainTag.style.backgroundImage = "";
 }
 
 function letsGetStarted () {
@@ -34,15 +30,32 @@ function whoWon () {
             afterScore();
             gameEnd2.style.display = "flex";
             letsGetStarted();
-        }, 2000)       
+        }, 1500)       
     } else if (playerNum == 10) {
         setTimeout(function() {
             afterScore();
             gameEnd1.style.display = "flex";
             letsGetStarted();
-        }, 2000)       
+        }, 1500)       
     }
 }
+
+var title = document.getElementById("title");
+var newGame = document.getElementById("newGame");
+var playerNameWindow = document.getElementById("playerNameWindow");
+var gameStarted = document.getElementById("gameStarted");
+var selectedIcons = document.getElementById("selectedIcons");
+var gameEnd1 = document.getElementById("gameEnd1");
+var gameEnd2 = document.getElementById("gameEnd2");
+
+//starting display
+title.style.display = "none";
+newGame.style.display = "flex";
+playerNameWindow.style.display = "none";
+gameStarted.style.display = "none";
+selectedIcons.style.display = "none";
+gameEnd1.style.display = "none";
+gameEnd2.style.display = "none";
 
 var playerPick = document.getElementById("playerPick");
 var computerPick = document.getElementById("computerPick");
@@ -70,12 +83,22 @@ var addOne = "+1";
 rock.addEventListener("click", function () {
     playerPick.innerHTML = choice[0];
     playerSelectedIcon.style.backgroundImage = "url('images/icons8-rock-50.png')";
-    playerSelectedIcon.classList.add("playerBattleAnimationClass");
-    computerSelectedIcon.classList.add("computerBattleAnimationClass");
-    setTimeout(function() {
-        playerSelectedIcon.classList.remove("playerBattleAnimationClass");
-        computerSelectedIcon.classList.remove("computerBattleAnimationClass");
-    }, 1000);
+    if (window.matchMedia("(min-width: 601px)").matches) {
+        playerSelectedIcon.classList.add("playerBattleAnimationClass");
+        computerSelectedIcon.classList.add("computerBattleAnimationClass");
+        setTimeout(function() {
+            playerSelectedIcon.classList.remove("playerBattleAnimationClass");
+            computerSelectedIcon.classList.remove("computerBattleAnimationClass");
+        }, 600);
+    } else {
+        playerSelectedIcon.classList.add("mobilePlayerBattleAnimationClass");
+        computerSelectedIcon.classList.add("mobileComputerBattleAnimationClass");
+        setTimeout(function() {
+            playerSelectedIcon.classList.remove("mobilePlayerBattleAnimationClass");
+            computerSelectedIcon.classList.remove("mobileComputerBattleAnimationClass");
+        }, 600);
+    }
+    
     computerPick.innerHTML = pickFunc();
     computerSelectedIcon.style.backgroundImage = "url('images/icons8-" + computerPick.innerHTML + "-50.png')";    
 
@@ -88,7 +111,7 @@ rock.addEventListener("click", function () {
             setTimeout(function () {
                 computerScore.innerHTML = compNum;
                 computerScore.classList.remove("scoreEffects");
-            }, 1000);
+            }, 600);
             break;
         default:
             playerScore.innerHTML = playerNum++ + addOne;
@@ -96,7 +119,7 @@ rock.addEventListener("click", function () {
             setTimeout(function () {
                 playerScore.innerHTML = playerNum;
                 playerScore.classList.remove("scoreEffects");
-            }, 1000);
+            }, 600);
     }
     whoWon();
 });
@@ -104,12 +127,21 @@ rock.addEventListener("click", function () {
 paper.addEventListener("click", function() {
     playerPick.innerHTML = choice[1];
     playerSelectedIcon.style.backgroundImage = "url('images/icons8-paper-50.png')";
-    playerSelectedIcon.classList.add("playerBattleAnimationClass");
-    computerSelectedIcon.classList.add("computerBattleAnimationClass");
-    setTimeout(function() {
-        playerSelectedIcon.classList.remove("playerBattleAnimationClass");
-        computerSelectedIcon.classList.remove("computerBattleAnimationClass");
-    }, 1000);
+    if (window.matchMedia("(min-width: 601px)").matches) {
+        playerSelectedIcon.classList.add("playerBattleAnimationClass");
+        computerSelectedIcon.classList.add("computerBattleAnimationClass");
+        setTimeout(function() {
+            playerSelectedIcon.classList.remove("playerBattleAnimationClass");
+            computerSelectedIcon.classList.remove("computerBattleAnimationClass");
+        }, 600);
+    } else {
+        playerSelectedIcon.classList.add("mobilePlayerBattleAnimationClass");
+        computerSelectedIcon.classList.add("mobileComputerBattleAnimationClass");
+        setTimeout(function() {
+            playerSelectedIcon.classList.remove("mobilePlayerBattleAnimationClass");
+            computerSelectedIcon.classList.remove("mobileComputerBattleAnimationClass");
+        }, 600);
+    }
     computerPick.innerHTML = pickFunc();
     computerSelectedIcon.style.backgroundImage = "url('images/icons8-" + computerPick.innerHTML + "-50.png')";
 
@@ -120,7 +152,7 @@ paper.addEventListener("click", function() {
             setTimeout(function () {
                 playerScore.innerHTML = playerNum;
                 playerScore.classList.remove("scoreEffects");
-            }, 1000);
+            }, 600);
             break;
         case "paper":
             break;
@@ -130,7 +162,7 @@ paper.addEventListener("click", function() {
             setTimeout(function () {
                 computerScore.innerHTML = compNum;
                 computerScore.classList.remove("scoreEffects");
-            }, 1000);
+            }, 600);
     }
     whoWon();
 });
@@ -138,12 +170,21 @@ paper.addEventListener("click", function() {
 scissors.addEventListener("click", function () {
     playerPick.innerHTML = choice[2];
     playerSelectedIcon.style.backgroundImage = "url('images/icons8-scissors-50.png')";
-    playerSelectedIcon.classList.add("playerBattleAnimationClass");
-    computerSelectedIcon.classList.add("computerBattleAnimationClass");
-    setTimeout(function() {
-        playerSelectedIcon.classList.remove("playerBattleAnimationClass");
-        computerSelectedIcon.classList.remove("computerBattleAnimationClass");
-    }, 1000);
+    if (window.matchMedia("(min-width: 601px)").matches) {
+        playerSelectedIcon.classList.add("playerBattleAnimationClass");
+        computerSelectedIcon.classList.add("computerBattleAnimationClass");
+        setTimeout(function() {
+            playerSelectedIcon.classList.remove("playerBattleAnimationClass");
+            computerSelectedIcon.classList.remove("computerBattleAnimationClass");
+        }, 600);
+    } else {
+        playerSelectedIcon.classList.add("mobilePlayerBattleAnimationClass");
+        computerSelectedIcon.classList.add("mobileComputerBattleAnimationClass");
+        setTimeout(function() {
+            playerSelectedIcon.classList.remove("mobilePlayerBattleAnimationClass");
+            computerSelectedIcon.classList.remove("mobileComputerBattleAnimationClass");
+        }, 600);
+    }
     computerPick.innerHTML = pickFunc();
     computerSelectedIcon.style.backgroundImage = "url('images/icons8-" + computerPick.innerHTML + "-50.png')";
 
@@ -154,7 +195,7 @@ scissors.addEventListener("click", function () {
             setTimeout(function () {
                 computerScore.innerHTML = compNum;
                 computerScore.classList.remove("scoreEffects");
-            }, 1000);
+            }, 600);
             break;
         case "paper":
             playerScore.innerHTML = playerNum++ + addOne;
@@ -162,7 +203,7 @@ scissors.addEventListener("click", function () {
             setTimeout(function () {
                 playerScore.innerHTML = playerNum;
                 playerScore.classList.remove("scoreEffects");
-            }, 1000);
+            }, 600);
             break;
         default:
             computerScore.innerHTML = compNum;
@@ -170,19 +211,6 @@ scissors.addEventListener("click", function () {
     }
     whoWon();
 });
-
-var title = document.getElementById("title");
-var newGame = document.getElementById("newGame");
-var playerNameWindow = document.getElementById("playerNameWindow");
-var gameStarted = document.getElementById("gameStarted");
-var selectedIcons = document.getElementById("selectedIcons");
-
-//starting display
-title.style.display = "none";
-newGame.style.display = "flex";
-playerNameWindow.style.display = "none";
-gameStarted.style.display = "none";
-selectedIcons.style.display = "none";
 
 //first click action
 var startGame = document.getElementById("startGame");
@@ -207,7 +235,7 @@ finalStart.addEventListener("click", function() {
 
     playerNameWindow.style.display = "none";
     title.style.display = "flex";
-    gameStarted.style.display = "block";
+    gameStarted.style.display = "flex";
     selectedIcons.style.display = "flex";
     changeImg();
 })
@@ -217,11 +245,12 @@ var reloadButton = document.getElementsByClassName("reloadButton");
 
 for (var i = 0; i < reloadButton.length; i++) {
     reloadButton[i].addEventListener("click", function() {
-        var flexContainer = document.getElementsByClassName("flex-container");
-
-        for (var i = 0; i < flexContainer.length; i++) {
-            flexContainer[i].style.display = "none";
-        }        
+        if (window.getComputedStyle(gameEnd1).display === "flex") {
+            gameEnd1.style.display = "none";
+        } else if(window.getComputedStyle(gameEnd2).display === "flex") {
+            gameEnd2.style.display = "none";
+        }
+            
         playerNameWindow.style.display = "flex";
     });
 }

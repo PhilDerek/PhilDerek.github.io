@@ -9,40 +9,34 @@
     <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
-<body>
-    <main id="bigImage" class="mainContainer">
-        <div id="title" class="title">
-            <div>
-                <p>Welcome to the game <span id="rockText" class="lettersTitle rockText">Rock</span> <span id="paperText" class="lettersTitle paperText">Paper</span> <span id="scissorsText" class="lettersTitle scissorsText">Scissors</span></p>
-                <p>Gain 10 points to win the game</p>
-            </div>
+<body> 
+    <main class="mainContainer">
+        <div id="title" class="title box">
+            <p class="boxText">Welcome to the game <span id="rockText" class="lettersTitle rockText">Rock</span> <span id="paperText" class="lettersTitle paperText">Paper</span> <span id="scissorsText" class="lettersTitle scissorsText">Scissors</span></p>
+            <p class="boxText">Gain 10 points to win the game</p>
         </div>
-        <div id="newGame" class="flex-container newGame">
-            <div class="box">
-                <p>Welcome to the game <span class="gameName">Rock, paper, scissors!</span></p>
-                <button id="startGame" class="flex-item btn btn-primary startGame">New Game</button>
-            </div> 
+        <div id="newGame" class="newGame box">
+            <p class="boxText">Welcome to the game <span class="gameName">Rock, paper, scissors!</span></p>
+            <button id="startGame" class="btn startGame">New Game</button>
         </div>
-        <div id="playerNameWindow" class="flex-container playerNameWindow">
-            <div class="box">
-                <p>Enter Your name:</p>
-                <input type="text" id="inputName" placeholder="name">
-                <button id="finalStart" class="flex-item btn btn-primary finalStart">Let's start</button>
-            </div>
+        <div id="playerNameWindow" class="playerNameWindow box">
+            <p class="boxText">Enter Your name:</p>
+            <input type="text" id="inputName" class="inputName" placeholder="name">
+            <button id="finalStart" class="btn finalStart">Let's start</button>
         </div>
         <div id="gameStarted" class="gameStarted">
             <div id="gameButtons" class="gameButtons">
-                <button type="button" id="rock" class="btn btn-light btn-lg btn-rps"><img src="images/icons8-rock-50.png"> Rock</button>
-                <button id="paper" class="btn btn-light btn-lg btn-rps"><img src="images/icons8-paper-50.png"> Paper</button>
-                <button id="scissors" class="btn btn-light btn-lg btn-rps"><img src="images/icons8-scissors-50.png"> Scissors</button>
+                <button type="button" id="rock" class="choiceBtn"><img src="images/icons8-rock-50.png"> Rock</button>
+                <button id="paper" class="choiceBtn"><img src="images/icons8-paper-50.png"> Paper</button>
+                <button id="scissors" class="choiceBtn"><img src="images/icons8-scissors-50.png"> Scissors</button>
             </div>
             <div id="names" class="names">
                 <span id="playerName">Player</span>
                 <span id="computerName">Computer</span>
             </div>
             <div id="score" class="score">
-                <p id="playerScore">0</p>
-                <p id="computerScore">0</p>
+                <span id="playerScore">0</span>
+                <span id="computerScore">0</span>
             </div>
             <div id="choices" class="choices">
                 <span id="playerPick"></span>
@@ -50,20 +44,16 @@
             </div>            
         </div>
         <div id="selectedIcons" class="selectedIcons">
-            <span id="playerSelectedIcon"></span>
-            <span id="computerSelectedIcon"></span>
+            <span id="playerSelectedIcon" class="selectedObject playerObject"></span>
+            <span id="computerSelectedIcon" class="selectedObject computerObject"></span>
         </div>
-        <div id="gameEnd1" class="flex-container gameEnd1">
-            <div class="box">
-                <p class="flex-item">You Won! Well done!</p>
-                <button class="flex-item btn btn-primary reloadButton">Play again</button>
-            </div>                        
+        <div id="gameEnd1" class="gameEnd1 box">
+            <p class="boxText">You Won! Well done!</p>
+            <button class="btn btn-primary reloadButton">Play again</button>      
         </div>
-        <div id="gameEnd2" class="flex-container gameEnd2">
-            <div class="box">
-                <p class="flex-item">You lost! Dont't give up!</p>
-                <button class="flex-item btn btn-primary reloadButton">Play again</button>
-            </div>    
+        <div id="gameEnd2" class="gameEnd2 box">
+            <p class="boxText">You lost! Dont't give up!</p>
+            <button class="reloadButton">Play again</button>   
         </div>
     </main>
     

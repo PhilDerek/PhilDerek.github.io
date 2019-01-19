@@ -1,18 +1,48 @@
-body {    
-    box-sizing: border-box;
-    background-color: rgba(0, 0, 0, 0.3);
+* {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    --objectSize: 50px;
+    --mdObjectSize: 45px;
+    --mobileObjectSize: 35px;
+}
+
+body {
+    background-color: rgba(0, 0, 0, 0.3);
     font-family: 'Indie Flower', cursive;
 }
 
-/* title styles */
+.mainContainer {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 15px;
+    background-color: black;
+    color: white;
+}
+
 .title {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     font-weight: bold;
-    font-size: 20px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .title p {
@@ -36,107 +66,82 @@ body {
 }
 
 /* newGame styles */
+.newGame {
+    display: flex;
+    background-color: #000;
+}
 .newGame p {
-    font-size: 26px; /* Po dodaniu SASSa zrobić całość styli stąd jako 1 regułę */
     font-weight: bold;
-    padding-top: 20px;
-    font-family: 'Indie Flower', cursive;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
 
 .gameName {
-    color: aqua;
-    font-size: 35px;
-    display: block;
+    color: aqua;   
 }
 
-.newGame button {
-    margin: 30px auto;
-    width: 30%;
-    font-size: 24px;
+.startGame {
     background-color: goldenrod;
     border: none;
 }
 
 /* playerNameWindow styles */
 .playerNameWindow {
-    text-align: center;
-    background-color: black;
-    color: white;   
-    border-radius: 15px;
-    width: 600px;
-    margin: auto;
-    margin-top: 15%;
-    padding-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .playerNameWindow p {
-    font-size: 26px;
     font-weight: bold;
-    padding-top: 20px;
-    font-family: 'Indie Flower', cursive;
+    margin: 0;
 }
 
-.playerNameWindow button {
-    display: block;
-    margin: 30px auto;
-    width: 20%;
-    font-size: 24px;
+.finalStart {
     background-color: goldenrod;
     border: none;
 }
 
 /* gameStarted styles */
 .gameStarted {
-    margin-top: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-content: center;
 }
 
 .gameButtons {
     display: flex;
-    justify-content: center;
-}
-
-.gameButtons button {
-    margin: 0 15px;
-    box-shadow: 3px 3px #888888;
-    border: none;
-}
-
-.gameButtons button:active {
-    box-shadow: 1px 1px #888888;
-    transform: translateY(2px);
-}
-
-.btn-rps {
-   width: 130px;
-   height: 60px;
-   text-align: center;
-   background-color: #ebebe0;
-}
-
-.btn-rps img {
-    width: 30px;
-}
-
-.btn-rps:hover {
-    background-color: #B0A7A7;
-}
-
-.names {
-    display: flex;
     justify-content: space-around;
-    padding-left: 10px;   
 }
 
+.choiceBtn {
+    box-shadow: 4px 4px 2px #888888;
+    border: none;
+    text-transform: uppercase;
+}
+
+.choiceBtn:active {
+    transform: translateY(2px);
+    box-shadow: 4px 2px 2px #888888;
+    outline: none;
+}
+
+.choiceBtn:focus {
+    outline: none;
+}
+
+.names,
 .score {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
 .scoreEffects {
     color: #08DF08;
     font-weight: bold;
-    animation: BigScoreEffect 1s;
-    margin-left: -22px;
+    animation: BigScoreEffect .6s;
 }
 
 .choices {
@@ -145,68 +150,47 @@ body {
     visibility: hidden;
 }
 
-/* End of game */
-.gameEnd1,
-.gameEnd2 {
-    display: none;
-}
-
-.flex-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 200px;
-    margin-top: 15%;
-}
-
-.box {
-    text-align: center;
-    width: 600px;
-    border-radius: 15px;
-    background-color: black;
-    color: white;
-}
-
-.box p {
-    font: 30px bold;
-    font-family: 'Indie Flower', cursive;
-}
-
-.box button {
-    width: 30%;
-    font-size: 24px;
+.reloadButton {
     background-color: goldenrod;
     border: none;
 }
 
-.flex-item {
-    margin: 25px;
-}
-
-.startGame:hover,
-.finalStart:hover,
-.reloadButton:hover {
-    background-color: aqua;
-    color: black;
-}
-
 .selectedIcons {
     display: flex;
+    width: 60%;
     justify-content: space-around;
+    position: absolute;
+    bottom: 35%;
+    left: 20%;
 }
 
-.selectedIcons span {
-    width: 50px;
-    height: 50px;
+.selectedObject {
+    position: absolute;
+    top: 0;
+}
+
+.playerObject {
+    left: 0;
+}
+
+.computerObject {
+    left: calc(100% - var(--objectSize));
 }
 
 .playerBattleAnimationClass {
-    animation: playerBattleAnimation 1s;
+    animation: playerBattleAnimation .6s;
 }
 
 .computerBattleAnimationClass {
-    animation: computerBattleAnimation 1s;
+    animation: computerBattleAnimation .6s;
+}
+
+.mobilePlayerBattleAnimationClass {
+    animation: mobilePlayerBattleAnimation .6s;
+}
+
+.mobileComputerBattleAnimationClass {
+    animation: mobileComputerBattleAnimation .6s;
 }
 
 @keyframes playerBattleAnimation {
@@ -214,7 +198,7 @@ body {
         transform: translate(0px, 0px) scale(1.0, 1.0);
     }
     50% {
-        transform: translate(250px, 0px) scale(2.0, 2.0);
+        transform: translate(20vw, 0px) scale(2.0, 2.0);
     }
     100% {
         transform: translate(0px, 0px) scale(1.0, 1.0);
@@ -226,7 +210,31 @@ body {
         transform: translate(0px, 0px) scale(1.0, 1.0);
     }
     50% {
-        transform: translate(-250px, 0px) scale(2.0, 2.0);
+        transform: translate(-20vw, 0px) scale(2.0, 2.0);
+    }
+    100% {
+        transform: translate(0px, 0px) scale(1.0, 1.0);
+    }
+}
+
+@keyframes mobilePlayerBattleAnimation {
+    0% {
+        transform: translate(0px, 0px) scale(1.0, 1.0);
+    }
+    50% {
+        transform: translate(10vw, 0px) scale(2.0, 2.0);
+    }
+    100% {
+        transform: translate(0px, 0px) scale(1.0, 1.0);
+    }
+}
+
+@keyframes mobileComputerBattleAnimation {
+    0% {
+        transform: translate(0px, 0px) scale(1.0, 1.0);
+    }
+    50% {
+        transform: translate(-10vw, 0px) scale(2.0, 2.0);
     }
     100% {
         transform: translate(0px, 0px) scale(1.0, 1.0);
@@ -242,5 +250,216 @@ body {
     }
     100% {
         transform: scale(1.0, 1.0);
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .boxText {
+        font-size: 26px;
+    }
+
+    .title {
+        padding: 2vh;
+    }
+
+    .newGame {
+        padding: 5vh 10%;
+    }
+
+    .gameName {
+        font-size: 35px;
+    }
+
+    .startGame {
+        font-size: 24px;
+    }
+
+    .playerNameWindow {
+        padding: 5vh 10vh;
+    }
+
+    .inputName {
+        margin: 30px auto;
+    }
+
+    .finalStart {
+        font-size: 24px;
+    }
+
+    .gameStarted {
+        height: 40vh;
+        width: 50%;
+    }
+
+    .choiceBtn {
+        width: 10vw;
+        padding: 5px;
+    }
+
+    .choiceBtn:hover {
+        background-color: #B0A7A7;
+        cursor: pointer;
+    }
+
+    .names,
+    .score {
+        font-size: 25px;
+    }
+
+    .selectedIcons span {
+        width: var(--objectSize);
+        height: var(--objectSize);
+    }
+
+    .gameEnd1,
+    .gameEnd2 {
+        padding: 50px;
+    }
+
+    .reloadButton {
+        font-size: 25px;
+        padding: 10px;
+    }
+
+    .startGame:hover,
+    .finalStart:hover,
+    .reloadButton:hover {
+        background-color: aqua;
+        color: black;
+        cursor: pointer;
+    }
+}
+
+@media only screen and (max-width: 1199px) {
+    .boxText {
+        font-size: 24px;
+    }
+
+    .title {
+        padding: 2vh;
+    }
+
+    .newGame {
+        padding: 5vh 10%;
+    }
+
+    .gameName {
+        font-size: 32px;
+    }
+
+    .startGame {
+        font-size: 22px;
+    }
+
+    .playerNameWindow {
+        padding: 5vh 10vh;
+    }
+
+    .inputName {
+        margin: 25px auto;
+    }
+
+    .finalStart {
+        font-size: 24px;
+    }
+
+    .gameStarted {
+        height: 40vh;
+        width: 50%;
+    }
+
+    .choiceBtn {
+        width: 10vw;
+        padding: 5px;
+    }
+
+    .names,
+    .score {
+        font-size: 25px;
+    }
+
+    .selectedIcons span {
+        width: var(--objectSize);
+        height: var(--objectSize);
+        transform: scale(.9);
+    }
+
+    .gameEnd1,
+    .gameEnd2 {
+        padding: 50px;
+    }
+
+    .reloadButton {
+        font-size: 25px;
+        padding: 10px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .boxText {
+        font-size: 15px;
+    }
+
+    .title {
+        padding: 2vh;
+        left: 0;
+        transform: translateX(0);
+        border-radius: 0;
+    }
+
+    .newGame {
+        padding: 5vh 10%;
+    }
+
+    .gameName {
+        font-size: 20px;
+    }
+
+    .startGame {
+        font-size: 15px;
+    }
+
+    .playerNameWindow {
+        padding: 5vh 10vh;
+    }
+
+    .finalStart {
+        font-size: 15px;
+    }
+
+    .inputName {
+        margin: 25px auto;
+    }
+
+    .gameStarted {
+        height: 40vh;
+        width: 80%;
+    }
+
+    .choiceBtn {
+        width: 30vw;
+        padding: 5px;
+        margin: 10px;
+    }
+
+    .names,
+    .score {
+        font-size: 25px;
+    }
+
+    .selectedIcons span {
+        width: var(--objectSize);
+        height: var(--objectSize);
+        transform: scale(.9);
+    }
+
+    .gameEnd1,
+    .gameEnd2 {
+        padding: 50px;
+    }
+
+    .reloadButton {
+        font-size: 18px;
+        padding: 10px;
     }
 }
