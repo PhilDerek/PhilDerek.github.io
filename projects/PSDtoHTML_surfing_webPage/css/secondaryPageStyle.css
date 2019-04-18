@@ -104,16 +104,13 @@ body {
   .header .mainText {
     position: absolute;
     top: 50%;
-    transform: translateY(-50%);
-    left: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
     text-align: center;
     color: #fff; }
     .header .mainText h1 {
       font-weight: bold;
       font-family: 'PT Sans', sans-serif; }
-    .header .mainText p {
-      width: 50%;
-      margin: 0 auto; }
 
 .horizontalSectionLine {
   width: 70%;

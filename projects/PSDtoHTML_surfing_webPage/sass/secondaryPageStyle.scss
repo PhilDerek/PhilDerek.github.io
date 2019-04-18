@@ -142,17 +142,13 @@ body {
     .mainText {
         position: absolute;
         top: 50%;
-        transform: translateY(-50%);
-        left: 0;
+        left: 50%;
+        transform: translate(-50%, -50%);
         text-align: center;
         color: #fff;
         h1 {
             font-weight: bold;
             @include robotoSansSerif();
-        }
-        p {
-            width: 50%;
-            margin: 0 auto;
         }
     }
 }

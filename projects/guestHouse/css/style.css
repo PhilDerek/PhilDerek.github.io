@@ -124,9 +124,9 @@ header .hero {
         font-size: 20px;
         border-radius: 50%;
         transition: 0.3s ease; }
-      .aboutBiałogóra .modalBoxes .boxContent .carouselArrow1 {
+      .aboutBiałogóra .modalBoxes .boxContent .modalBoxesArrow1 {
         left: 5%; }
-      .aboutBiałogóra .modalBoxes .boxContent .carouselArrow2 {
+      .aboutBiałogóra .modalBoxes .boxContent .modalBoxesArrow2 {
         right: 5%; }
 
 .homeGallery {
