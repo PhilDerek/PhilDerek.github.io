@@ -10,7 +10,8 @@ body {
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
-  z-index: 1; }
+  z-index: 1;
+  overflow-x: hidden; }
 
 header .hero {
   position: relative;
@@ -19,7 +20,8 @@ header .hero {
   background: transparent; }
   header .hero .myNavClass {
     font-size: 26px;
-    z-index: 11; }
+    z-index: 3;
+    width: 100%; }
   header .hero p {
     font-family: "Kaushan Script", cursive;
     text-align: center;
@@ -42,7 +44,8 @@ header .hero {
   .aboutBiałogóra h2 {
     font-size: 36px;
     font-weight: bold;
-    letter-spacing: .05em; }
+    letter-spacing: .05em;
+    margin: 30px auto; }
   .aboutBiałogóra p {
     text-align: justify;
     font-size: 19px;
@@ -95,7 +98,7 @@ header .hero {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     z-index: 4; }
     .aboutBiałogóra .modalBoxes .boxContent {
@@ -111,7 +114,7 @@ header .hero {
         transition: 0.6s ease; }
       .aboutBiałogóra .modalBoxes .boxContent .boxImg img {
         object-fit: cover;
-        width: 100vw;
+        width: 100%;
         height: 100vh; }
       .aboutBiałogóra .modalBoxes .boxContent .arrow {
         cursor: pointer;
@@ -158,21 +161,24 @@ header .hero {
         position: absolute;
         top: 0;
         left: 0;
-        margin-top: 10%; }
+        margin-top: 10%;
+        z-index: 2; }
       .homeGallery .myOwnCarouselClass .slideBox img {
         width: 60%;
         max-height: 550px;
         position: absolute;
         top: 0;
         left: 40%; }
-    .homeGallery .myOwnCarouselClass .carouselArrow1,
-    .homeGallery .myOwnCarouselClass .carouselArrow2 {
-      background-color: #FFE978;
-      border-radius: 50%;
-      border: 7px #FFE978 solid;
-      position: absolute;
-      top: 50%;
-      margin-top: -15px; }
+    .homeGallery .myOwnCarouselClass .carouselArrow {
+      z-index: 2; }
+      .homeGallery .myOwnCarouselClass .carouselArrow .carouselArrow1,
+      .homeGallery .myOwnCarouselClass .carouselArrow .carouselArrow2 {
+        background-color: #FFE978;
+        border-radius: 50%;
+        border: 7px #FFE978 solid;
+        position: absolute;
+        top: 50%;
+        margin-top: -15px; }
 
 .priceTable {
   background: transparent;
@@ -270,8 +276,6 @@ header .hero {
         visibility: hidden; }
     .hero p {
       font-size: 60px; }
-  .aboutBiałogóra h2 {
-    margin: 30px auto; }
   .aboutBiałogóra .modalBoxes .boxContent .closeIcon {
     right: 30px;
     top: 30px;
@@ -337,8 +341,6 @@ header .hero {
           color: black; }
     .hero p {
       font-size: 60px; }
-  .aboutBiałogóra h2 {
-    margin: 30px auto; }
   .aboutBiałogóra .modalBoxes .boxContent .closeIcon {
     right: 30px;
     top: 30px;
@@ -408,8 +410,6 @@ header .hero {
           cursor: default;
           font-weight: normal;
           margin-left: 0; }
-  .aboutBiałogóra h2 {
-    margin: 30px auto; }
   .aboutBiałogóra .cityGallery {
     flex-wrap: wrap; }
     .aboutBiałogóra .cityGallery .imageView {
@@ -520,8 +520,7 @@ header .hero {
             header .hero .myNavClass .respContent .textForNavbar .navElem {
               padding: .2rem 1rem; }
   .aboutBiałogóra h2 {
-    font-size: 22px;
-    margin: 30px auto; }
+    font-size: 22px; }
   .aboutBiałogóra p {
     font-size: 13px; }
   .aboutBiałogóra .cityGallery {

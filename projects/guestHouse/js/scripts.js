@@ -33,6 +33,8 @@ var scrollToGallery = document.getElementById("gallerySection");
 var scrollToPrice = document.getElementById("priceSection");
 var scrollToContact = document.getElementById("contactSection");
 
+var navbarMainContent = document.getElementById("navbarMainContent");
+
 navbarFirstLink.addEventListener("click", function() {
     smoothScroll(scrollToAbout);
 })
@@ -145,8 +147,6 @@ window.addEventListener("click", function(e) {
 
 hamburgerBtn.addEventListener("click", function() {
     this.classList.toggle("open");
-    navbarMainContent.classList.toggle("show");
-    navbarMainContent.classList.toggle("d-none");
 })
 
 window.addEventListener("scroll", function () {
