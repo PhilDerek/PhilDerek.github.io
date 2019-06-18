@@ -357,13 +357,13 @@ footer {
             height: 80px;
         }
         a {
-            transition: all .4s ease-in-out;
+            transition: transform .3s ease-in-out, border-bottom .3s ease-in-out;
             font-weight: bold;
             margin: 15px;
             &:hover {
                 color: $mainColor;
                 transform: scale(1.1);
-                border-bottom: 3px $mainColor solid;
+                border-bottom: 2px $mainColor solid;
             }
         }
     }

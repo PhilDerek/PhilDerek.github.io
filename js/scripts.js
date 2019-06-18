@@ -8,6 +8,15 @@ $(function() {
         })
     }
 
+    //sections scrolling with correct offset
+    function underNavSection(sections) {
+        var navHeight = $("#myNavClass").height();
+        sections.each(function() {
+            $(this).css("padding-top", navHeight + "px")
+        })
+    }
+    underNavSection($(".paddingSet"));
+
     //fixed nav
     $(window).scroll(function () {
         var navHeight = $(".navFixed").height();
